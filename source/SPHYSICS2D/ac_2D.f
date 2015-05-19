@@ -89,6 +89,11 @@ c        -- Zeroing Variables --
          drhodx_CSPH(i) = 0.0
          drhodz_CSPH(i) = 0.0
          
+         dPcdx(i)=0.0
+         dPcdz(i)=0.0
+         
+         dmpdt(i)=0.0
+         
 
 c       ---  Clear vorticity arrays ---
 
@@ -99,7 +104,7 @@ c       ---  Clear vorticity arrays ---
 
       enddo
 
-           
+       Svmax=max(maxval(up),maxval(wp))    
        ly2 = 0   !Default Y-Periodic value
 
        do kind_p1=1,2
@@ -145,6 +150,7 @@ c          -- Cells in the same XY sheet -
        do j1=1,nct
            if(nc(j1,kind_p1).gt.0)
      +		call self(j1,kind_p1,ini_kind_p2)
+            
        enddo
              
 c      -- Periodic Boundary Calls in X-Direction --              
@@ -177,7 +183,7 @@ c      -- Periodic Boundary Calls in X-Direction --
              
        
        do i=nstart,np
-         
+                  
          udot(i) = ax(i)
          wdot(i) = az(i)
          rdot(i) = ar(i)     
@@ -186,6 +192,17 @@ c      -- Periodic Boundary Calls in X-Direction --
          zcor(i) = eps*wx(i)
        
          TEdot(i)=aTE(i)
+         
+         gradPcx(i)=dPcdx(i)
+         gradPcz(i)=dPcdz(i)
+         
+
+         
+         mpfdot(i)=dmpdt(i)
+         
+         saturazione(i)= mpf(i)*coeffsat(i)
+         
+         Pcap(i)=kcap*(1-saturazione(i))**alpha
        
        enddo
 

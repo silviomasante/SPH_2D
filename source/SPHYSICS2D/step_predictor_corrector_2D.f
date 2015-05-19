@@ -92,6 +92,7 @@ c
          po(i)   = p(i)
          rhoo(i) = rhop(i)
          TEo(i)=TEp(i)
+         mpfo(i)=mpf(i)
         
       enddo
 
@@ -100,6 +101,7 @@ c
          rhop(i) = rhoo(i) + dt2*rdot(i)
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
+         mpf(i)=mpfo(i)+dt2*mpfdot(i)
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i))
       end do
 
@@ -187,6 +189,7 @@ c
       do i=nbp1,np
          rhop(i) = rhoo(i) + dt2*rdot(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
+         mpf(i)=mpfo(i)+dt2*mpfdot(i)
       end do
 
 
@@ -213,6 +216,7 @@ c
          rhop(i) = 2.*rhop(i) - rhoo(i)
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=2.*TEp(i)-TEo(i)
+       
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i)) 
       end do
 

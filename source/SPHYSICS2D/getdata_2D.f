@@ -251,10 +251,11 @@ c     --- Load Particle Position Data ---
        
        open(13,file=name_ini)
 
-196    format(7e16.8)
+196    format(9e16.8)
 
        do i=1,np
-         read(13,196) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i)
+         read(13,196) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
+     +   mpf(i),porosita(i)
                                                                 
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i))
 
