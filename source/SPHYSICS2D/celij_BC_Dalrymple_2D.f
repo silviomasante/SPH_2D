@@ -21,8 +21,10 @@ c
       include 'common.2D'  
        
       do kind_p2=ini_kind_p2,2
+       Sr002=0
+       Sn00=0
         if(nc(j2,kind_p2).ne.0) then
-
+        
         do ii=1,nc(j1,kind_p1)
           i = ibox(j1,kind_p1,ii)
          
@@ -39,6 +41,9 @@ c
             if(rr2.lt.fourh2.and.rr2.gt.1.e-18) then
              dux = up(i) - up(j)
              duz = wp(i) - wp(j)
+             
+             Sr002=Sr002+rr2
+             Sn00=Sn00+1
 
 c            Calculating kernel & Normalized Kernel Gradient
              call kernel(drx,drz,i,j,j1,j2,rr2) 
@@ -89,7 +94,7 @@ c              ____ Tensile correction
              R=Ra+Rb
              p_v = p_v+ R*fab
 
-	    endif
+       endif
 
             ax(i) = ax(i) - pm(j) * p_v * frxi
             az(i) = az(i) - pm(j) * p_v * frzi
@@ -131,6 +136,35 @@ c
            pmi_Wab_over_rhobar = pm(i)*Wab*one_over_rhobar
            ux(j) = ux(j) + dux*pmi_Wab_over_rhobar   !pm(i) * dux * Wab / robar
            wx(j) = wx(j) + duz*pmi_Wab_over_rhobar   !pm(i) * duz * Wab / robar
+           
+         
+          
+         
+          denom=rr2*sqrt(rr2)*Sn00*Sn00
+          num=BETA_sh_corr*Svmax*Sr002
+          coefficiente=num/denom
+          !write(*,*) 'AHHHHHHHH  ',coefficiente,num,denom
+          ux(i) = ux(i) - coefficiente*drx
+         
+          wx(i) = wx(i) - coefficiente*drz
+          ux(j) = ux(j) + coefficiente*drx
+          
+          wx(j) = wx(j) + coefficiente*drz
+          
+          
+c       absorbed fluid velocity
+ 
+         VfX(i)=-coeffvel(i)*(-gradPcx(i))
+         VfZ(i)=-coeffvel(i)*(-gradPcz(i)-rho0*grz)         
+         VfX(j)=-coeffvel(j)*(-gradPcx(j))
+         VfZ(j)=-coeffvel(j)*(-gradPcz(j)-rho0*grz) 
+         
+       diff(i)=((-VfX(j)*drx-VfZ(j)*drz)*saturazione(j)**alpha)/
+     + sqrt(rr2)
+
+         
+         dmpdt(i)= dmpdt(i)+diff(i)*pm(j)*(mpf(i)-mpf(j))*fac/rho0
+         dmpdt(j)= dmpdt(j)-diff(i)*pm(i)*(mpf(j)-mpf(i))*fac/rho0
 
 c  ...  Vorticity calculation
 
@@ -141,7 +175,7 @@ c  ...  Vorticity calculation
 	     endif
          enddo
         enddo
-	 endif
-	enddo
+      endif
+      enddo
 
       end

@@ -282,7 +282,11 @@ c     --- Load Particle Position Data ---
        
          iflag(i)=1 ! To detect particles inside the container
 
-         pVol(i)      = pm(i)/rhop(i)
+         pVol(i)       = pm(i)/rhop(i)
+         coeffsat(i)   = 1/(rho0*porosita(i)*pVol(i))
+         saturazione(i)= mpf(i)*coeffsat(i)
+
+
          
          if(iRiemannSolver.eq.1)then
            Volrho(i)    = pm(i)

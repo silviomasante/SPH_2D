@@ -58,5 +58,11 @@ c     --- Use CSPH terms ---
       dTEdx_CSPH(j) = dTEdx_CSPH(j) -dTE*frx_norm_j
       dTEdz_CSPH(j) = dTEdz_CSPH(j) -dTE*frz_norm_j
 
+      dPc= Pcap(i)-Pcap(j)
+      dPcdx(i)=dPcdx(i)-dPc*frx_norm_i
+      dPcdz(i)=dPcdz(i)-dPc*frz_norm_i
+      dPcdx(j)=dPcdx(j)-dPc*frx_norm_j
+      dPcdz(j)=dPcdz(j)-dPc*frz_norm_j
+
       return
       end

@@ -51,7 +51,16 @@ c
        endif
 
       !if(itime.eq.0) call densityFilter
+      
+      if (i.eq.3214) then
+         write(*,*)'*****'         
+         write(*,*)'pred'
+         write(*,*)'*****'
+         write(*,*)mpf(i),saturazione(i)
+      endif
+      
       call ac		
+
 
 c
 c  ... compute corrections to:
@@ -102,6 +111,9 @@ c
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
          mpf(i)=mpfo(i)+dt2*mpfdot(i)
+         
+
+         
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i))
       end do
 
@@ -190,6 +202,7 @@ c
          rhop(i) = rhoo(i) + dt2*rdot(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
          mpf(i)=mpfo(i)+dt2*mpfdot(i)
+
       end do
 
 

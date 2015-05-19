@@ -159,13 +159,12 @@ c       absorbed fluid velocity
          VfX(j)=-coeffvel(j)*(-gradPcx(j))
          VfZ(j)=-coeffvel(j)*(-gradPcz(j)-rho0*grz) 
          
-       diff(i,j)=((-VfX(j)*drx-VfZ(j)*drz)*saturazione(j)**alpha)/
+       diff(i)=((-VfX(j)*drx-VfZ(j)*drz)*saturazione(j)**alpha)/
      + sqrt(rr2)
-       diff(j,i)=((-VfX(i)*drx-VfZ(i)*drz)*saturazione(i)**alpha)/
-     + sqrt(rr2)
+
          
-         dmpdt(i)= dmpdt(i)+diff(i,j)*pm(j)*(mpf(i)-mpf(j))*fac/rho0
-         dmpdt(j)= dmpdt(j)+diff(j,i)*pm(i)*(mpf(j)-mpf(i))*fac/rho0
+         dmpdt(i)= dmpdt(i)+diff(i)*pm(j)*(mpf(i)-mpf(j))*fac/rho0
+         dmpdt(j)= dmpdt(j)-diff(i)*pm(i)*(mpf(j)-mpf(i))*fac/rho0
 
 c  ...  Vorticity calculation
 

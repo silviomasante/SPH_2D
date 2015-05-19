@@ -12,7 +12,7 @@ c234567891123456789212345679312345678941234567895123456789612345678971234567898
      3                coeffvel(npar),alpha,dmpdt(npar),mpfdot(npar),
      4                dPcdx(npar),dPcdz(npar),dPc,kcap,mpf(npar),
      5                dmpf(npar),gradPcx(npar),gradPcz(npar), 
-     6                diff(300,300),mpfo(npar)
+     6                diff(npar),mpfo(npar)
       common /ccloc/  xp(npar),zp(npar), xo(npar),zo(npar)
       common /ccloc2/ up(npar),wp(npar),rhop(npar),p(npar),pm(npar),
      2                cs(npar),TEp(npar)
