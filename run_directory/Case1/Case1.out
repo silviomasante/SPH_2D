@@ -1,0 +1,208 @@
+
+ <SPHYSICS>  Copyright (C) <2009>
+ <Prof. Robert Dalrymple, Prof. M. Gomez Gesteira, 
+ Dr Benedict Rogers, Dr Alejandro Crespo, 
+ Dr Muthukumar Narayanaswamy, Dr Shan Zou, & Dr Andrea Panizzo >
+ This program comes with ABSOLUTELY NO WARRANTY;    
+ This is free software, and you are welcome to      
+ redistribute it under conditions stated in         
+ the GPL License;                                   
+
+  ---    SPHYSICSgen_2D.F     ---
+  ---   GENERATING GEOMETRY   ---
+  ---   Distributed under     ---
+  ---    the GPL License      ---
+
+ Choose Starting options:   Start new RUN = 0 
+                        : Restart old RUN = 1 
+      with CheckPointing:   Start new RUN = 2 
+                        : Restart old RUN = 3 
+           0
+ Choose KERNEL
+ Gaussian        = 1
+ Quadratic       = 2
+ Cubic- Spline   = 3
+ Quintic Wendland= 5
+           5
+ Choose ALGORITHM
+ Predictor- Corrector = 1
+ Verlet               = 2
+ Symplectic           = 3
+ Beeman               = 4
+           1
+  Use Density filter (0=no, 1=Shepard, 2=MLS) ??
+           2
+  ndt_FilterPerform ? 
+          30
+  Use kernel & gradient correction ??
+  0=no, 1= Kernel correction,                           2= Gradient kernel correction
+           0
+ Kind of viscosity  ??
+  (1) Artificial (2) Laminar (3) Laminar +SPS
+           1
+ Alpha  ??
+  0.30000001    
+ vorticity printing ? (1=yes)
+           0
+
+  Choose Equation of State (EoS)
+  1: Weakly Compressible Fluid (Taits equation)
+  2: Ideal Gas Equation
+  3: Weakly Compressible Fluid (Morris equation)
+  4: Incompressible Fluid (Poissons equation)
+ i_EoS           1
+  Maximum Depth in the simulation, h_SWL
+   2.0000000    
+  Coefficient of Speed of sound ( 10 , 40 ) ??
+   10.000000    
+  B=coef2*rho0*g*(h_SWL)/7.0 =   280285.72    
+  Co=   10.000000     *V=   44.294472    
+ Choose Boundary Type
+ Monaghan & Kos (1999) = 1
+ Dalrymple & Knio (2001) = 2
+           2
+  Use Hughes & Graham (2009) correction ?  
+  ndt_DBCPerform ? (1 means no correction) 
+          15
+  Geometry of the zone
+  (1) BOX 
+  (2) BEACH 
+  (3) EXTERNALLY FIXED GEOMETRY 
+           1
+ Fluid Particle Lattice Structure ??
+  (1) SC; (2) BCC
+ Lattice Type =            2
+
+ --- Generating 2-D Box ---
+
+  Box dimension LX,LZ?
+   4.0000000       4.0000000    
+  Spacing dx,dz?
+  2.99999999999999989E-002  2.99999999999999989E-002
+  Inclination of floor in X ( beta ) ?? 
+   0.0000000    
+  Dimension (pixels)         133           0         133
+
+  Enter Periodicity Information:
+  Add Periodic Lateral boundaries
+  in X, Y, & Z-Directions ? (1=yes)
+
+ i_periodicOBs
+ X-Direction:            0
+ Y-Direction:            0
+ Z-Direction:            0
+ Left  wall (x = x1) starts at            1
+ Right wall (x = x2) starts at          269
+ Bottom boundary starts at                  537
+  Add wall inside the box (1=y)
+           0
+  Add obstacle inside the box (1=y)
+           0
+ No of B. Fixed Particles         801
+  Add wavemaker inside the box (1=y)
+           0
+  Add gate inside the box (1=y)
+           0
+
+  Add Floating Bodies (1=yes) ?
+           0
+ nbfm          801
+ No of B. Particles         801
+ Initial conditions
+ 1) Set of particles without grid
+ 2) Fill a square shaped region 
+ 3) Round shaped drop  
+   Which Initial condition ??
+           2
+  Correct pressure at boundaries ?? (1=y)
+           0
+  Cube containing particles
+  XMin, Xmax ??
+  2.99999999999999989E-002   1.0000000000000000     
+  ZMin, Zmax ??
+  2.99999999999999989E-002   2.0000000000000000     
+
+ XXmin_initial   2.99999999999999989E-002
+ XXmax_initial    1.0000000    
+ ZZmin_initial   2.99999993E-02
+ ZZmax_initial    2.0000000    
+
+ Recalculated max and min X   0.98999999999999999       2.99999999999999989E-002
+ Recalculated max and min Y    0.0000000       0.0000000    
+ Recalculated max and min Z    2.0000000000000000       2.99999999999999989E-002
+
+ i_obstacleShape            0
+ iopt_wavemaker             0
+ i_paddleType               0
+ beta   0.0000000    
+
+  Npnts x/y/z           33           1          67
+ Last Particle        5123
+  Fill a new region ?? (1=y)
+           0
+ No of Particles        5123
+ End
+  please input the tmax and out:
+   3.0000000      1.99999996E-02
+  initial recording time
+   0.0000000    
+  For detailed recording during RUN
+  step, start, end
+  5.00000024E-04   1.0000000      -1.0000000    
+ input dt:, Variable time step (1=y)
+  9.99999975E-05           1
+ CFL number (0.1 - 0.5)
+  0.20000000    
+  h=coefficient*sqrt(dx*dx+dy*dy+dz*dz)
+  Coefficient ??
+  0.92000002    
+
+ --- Courant Stability Check ---
+ Courant No. Cr =   0.20000000    
+ B    =              280285.72    
+ Cmax =              44.294468    
+ dtmax:   1.23142803E-04
+
+ --- Viscous Stability Check ---
+ Kinematic Viscosity  9.99999997E-07
+ Visc =             9.99999997E-07
+ dtmax:    1.7821783    
+
+ dt:   9.99999975E-05
+
+  Choose Riemann Solver
+  0: None 
+  1: Conservative (Vila 1999)
+  2: Non-Conservative (Parshikov et al. 2000)
+ iRiemannSolver            0
+
+ -- Checking particles initial Positions --
+ dx, dz   2.99999999999999989E-002  2.99999999999999989E-002
+ dx_thresh   3.00000003E-03
+ dz_thresh   3.00000003E-03
+ ncx, ncz           54          54
+ --> Particle Positions Okay
+
+
+ Writing IPART file ...
+
+ IPART file written
+
+ Which compiler is desired? 
+ Linux: 1 = gfortran, 2 = ifort
+ Windows: 3 = ifort, 4 = Silverfrost FTN95
+           3
+ Using Intel Fortran for Windows
+
+ Enter Desired Precision of XYZ variables
+ 1 = Single Precision 
+ 2 = Double Precision 
+           1
+ Single Precision kind number is            4
+ Opening source\SPHYSICS2D\precision_kind.2D, 
+
+ nbf           801
+ nbfm          801
+ nb            801
+ np           5123
+Generated np =       5123 particles in   0.00 seconds
