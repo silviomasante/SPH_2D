@@ -21,9 +21,9 @@
 0    			Add wall
 1     			Add obstacle (1=y)
 1     			Choose rectangular (1) or trapezoid (2)
-2     			Which kind of obstacle: (1) Solid, (2) With Solid Walls
-2     			Density of points(ndens): dxi_new=dxi_old/ndens (ndens >1 increases density)
-1.00,2.0     		Cube containing particles :  XMin, Xmax ??
+1     			Which kind of obstacle: (1) Solid, (2) With Solid Walls
+1     			Density of points(ndens): dxi_new=dxi_old/ndens (ndens >1 increases density)
+1.50,2.0     		Cube containing particles :  XMin, Xmax ??
 0.03,2.0    	        Cube containing particles :  ZMin, Zmax ??
 90.00    		Inclination ( beta ) ??
 0     			Add another obstacle (1=y)
