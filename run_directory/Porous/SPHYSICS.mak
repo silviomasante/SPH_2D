@@ -1,5 +1,5 @@
 FC=gfortran
-OPTIONS= -O3
+OPTIONS= -O3 -g
 srcdir=.
 idir=../../execs
 bakdir=../../execs.bak

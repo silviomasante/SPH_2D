@@ -123,6 +123,12 @@ c
        grx=0.0
        gry=0.0
        grz=-g
+       viscosita=1d-3
+       
+       do i=nstart,np
+       permeabilita(i)=1.d-10
+       coeffvel(i)=permeabilita(i)/(porosita(i)*viscosita)
+       enddo
                            
        do while (time.lt.tmax)
           visc_dt=0.

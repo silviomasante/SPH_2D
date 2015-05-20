@@ -29,12 +29,12 @@ c     --- Write out to PART-type files ---
 
       do i=1,np
          write(nf,100) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
-     + mpf(i),porosita(i)
+     + mpf(i),porosita(i),Pcap(i)
 
       enddo
 
 
-100   format(9e16.8)
+100   format(10e16.8)
 
 
 c     --- Write out to DT file ---

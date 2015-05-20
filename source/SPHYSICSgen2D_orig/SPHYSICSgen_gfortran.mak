@@ -1,4 +1,4 @@
-FC=gfortran -O3
+FC=gfortran -O3 
 srcdir = .
 idir=../../execs
 bakdir=../../execs.bak

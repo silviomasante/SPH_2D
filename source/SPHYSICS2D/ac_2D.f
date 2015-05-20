@@ -201,9 +201,11 @@ c      -- Periodic Boundary Calls in X-Direction --
          mpfdot(i)=dmpdt(i)
          
          coeffsat(i)=1/(rho0*porosita(i)*pVol(i))
-         
+         if (i.le.nb) then
          saturazione(i)= mpf(i)*coeffsat(i)
-         
+         else
+         saturazione(i)= 1.0
+         endif
          Pcap(i)=kcap*(1-saturazione(i))**alpha
        
        enddo

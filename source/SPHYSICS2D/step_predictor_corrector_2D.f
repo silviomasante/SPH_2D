@@ -20,12 +20,12 @@ c    along with this program.  If not, see <http://www.gnu.org/licenses/>.
       subroutine step
       include 'common.2D'
       
-	
+    
        character supp*4,name*40,detsupp*4
       
       dt2 = 0.5*dt
 
-c	Predictor- Corrector Method
+c   Predictor- Corrector Method
 
 c  ...  compute acceleration
 c
@@ -41,25 +41,20 @@ c
       endif
 
 
-	call check_limits_2D	!<=========  TEMPORARY
-	call ini_divide(2)
-	call divide(nbp1,np,2)	
+      call check_limits_2D    !<=========  TEMPORARY
+      call ini_divide(2)
+      call divide(nbp1,np,2)  
 
        if(iopt_movingObject.eq.1)then
          call recover_list
          call divide(nbfp1,nb,1)
        endif
 
-      !if(itime.eq.0) call densityFilter
+c      if(itime.eq.0) call densityFilter
       
-      if (i.eq.3214) then
-         write(*,*)'*****'         
-         write(*,*)'pred'
-         write(*,*)'*****'
-         write(*,*)mpf(i),saturazione(i)
-      endif
+
       
-      call ac		
+      call ac       
 
 
 c
@@ -73,27 +68,30 @@ c
 C
       call correct
 
-c      i = 1087	
+c      i = 1087 
 c      print*,'After CORRECT, predictor, itime = ',itime
 c      print*,'xp(i), zp(i) ',xp(i), zp(i)
 c      print*,'ax(i), az(i) ',ax(i), az(i)
 c      print*,'dt, dt2 ',dt, dt2 
-c      i = 565	
+c      i = 565  
 c      print*,'xp(i), zp(i) ',xp(i), zp(i)
 c      print*,'ax(i), az(i) ',ax(i), az(i)
 c      print*,'dt, dt2 ',dt, dt2 
 c      if(itime.eq.3)stop
 
       if (ivar_dt.eq.1) then
-	    call variable_time_step  
-	    ddt_p=dt_new
+        call variable_time_step  
+        ddt_p=dt_new
       endif
 
 c
 c  ... predictor
 c
-
+c         write(*,*)'*****'         
+c         write(*,*)'pred'
+c         write(*,*)'*****'
        do i=nstart,np
+
          xo(i)   = xp(i)
          zo(i)   = zp(i)
          uo(i)   = up(i)
@@ -101,15 +99,20 @@ c
          po(i)   = p(i)
          rhoo(i) = rhop(i)
          TEo(i)=TEp(i)
-         mpfo(i)=mpf(i)
+         
         
-      enddo
+         
+c         mpf(i)=mpfo(i)+dt2*mpfdot(i)
+         mpfo(i)=mpf(i)
+c         write(*,*) i,mpfo(i),mpf(i)
+       enddo
 
 
       do i=nbp1,np
          rhop(i) = rhoo(i) + dt2*rdot(i)
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
+
          mpf(i)=mpfo(i)+dt2*mpfdot(i)
          
 
@@ -118,7 +121,7 @@ c
       end do
 
 
-      if(iBC.eq.2)then	!Hughes & Grahams 2009 correction 
+      if(iBC.eq.2)then  !Hughes & Grahams 2009 correction 
          nstep_DBC=nstep_DBC+1
          iDBC=0
          if(mod(nstep_DBC,ndt_DBCPerform).eq.0)then
@@ -181,7 +184,7 @@ c  ...  corrector
 c
       call check_limits_2D       !<=========  TEMPORARY
       call ini_divide(2)
-      call divide(nbp1,np,2)	
+      call divide(nbp1,np,2)    
 
        if(iopt_movingObject.eq.1)then
          call recover_list
@@ -193,8 +196,8 @@ c
 
 
       if (ivar_dt.eq.1) then
-	    call variable_time_step 
-	    ddt_c=dt_new
+        call variable_time_step 
+        ddt_c=dt_new
            dt=min(ddt_p,ddt_c)  !Time step to be used in next loop
       endif
 
@@ -206,7 +209,7 @@ c
       end do
 
 
-      if(iDBC.eq.1)then	!Hughes & Grahams 2009 correction 
+      if(iDBC.eq.1)then !Hughes & Grahams 2009 correction 
            do i=1,nb
               rhop(i) = rhoo(i) + dt2*rdot(i)
               if (rhop(i).lt.rho0) rhop(i)=rho0
@@ -234,7 +237,7 @@ c
       end do
 
 
-      if(iDBC.eq.1)then	!Hughes & Grahams 2009 correction 
+      if(iDBC.eq.1)then !Hughes & Grahams 2009 correction 
            do i=1,nb
             rhop(i) = 2.*rhop(i) - rhoo(i)
             if (rhop(i).lt.rho0) rhop(i)=rho0

@@ -4107,7 +4107,7 @@ c     ____________________ SUBROUTINE TOCOMPILE_gfortran
       FMT1="(2A)"
       open(22,file='SPHYSICS.mak')
       write(22,FMT) 'FC=gfortran'
-      write(22,FMT) 'OPTIONS= -O3'
+      write(22,FMT) 'OPTIONS= -O3 -g'
       !- Uncomment as required -
 c     &   //' -ftree-vectorize'
 c     &   //' -ffast-math -funroll-loops'
@@ -4407,7 +4407,7 @@ c     ____________________ SUBROUTINE TOCOMPILE_ifort
       FMT1="(2A)"
       open(22,file='SPHYSICS.mak')
       write(22,FMT) 'FC=ifort'
-      write(22,FMT) 'OPTIONS= -O3'
+      write(22,FMT) 'OPTIONS= -O3 -g'
       !- Uncomment as required -
      &   //' -ipo'
 c     &   //' -g -debug all -check all'

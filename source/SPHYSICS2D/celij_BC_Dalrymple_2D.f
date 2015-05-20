@@ -21,7 +21,7 @@ c
       include 'common.2D'  
        
       do kind_p2=ini_kind_p2,2
-       Sr002=0
+       Sr002=0.d0
        Sn00=0
         if(nc(j2,kind_p2).ne.0) then
         
@@ -138,33 +138,34 @@ c
            wx(j) = wx(j) + duz*pmi_Wab_over_rhobar   !pm(i) * duz * Wab / robar
            
          
-          
+c          SHIFT CORRECTION          
          
-          denom=rr2*sqrt(rr2)*Sn00*Sn00
-          num=BETA_sh_corr*Svmax*Sr002
-          coefficiente=num/denom
+c          denom=rr2*sqrt(rr2)*Sn00*Sn00
+c          num=BETA_sh_corr*Svmax*Sr002
+c          coefficiente=num/denom
           !write(*,*) 'AHHHHHHHH  ',coefficiente,num,denom
-          ux(i) = ux(i) - coefficiente*drx
+c          ux(i) = ux(i) - coefficiente*drx
          
-          wx(i) = wx(i) - coefficiente*drz
-          ux(j) = ux(j) + coefficiente*drx
+c          wx(i) = wx(i) - coefficiente*drz
+c          ux(j) = ux(j) + coefficiente*drx
           
-          wx(j) = wx(j) + coefficiente*drz
+c          wx(j) = wx(j) + coefficiente*drz
           
           
 c       absorbed fluid velocity
  
          VfX(i)=-coeffvel(i)*(-gradPcx(i))
-         VfZ(i)=-coeffvel(i)*(-gradPcz(i)-rho0*grz)         
+        VfZ(i)=-coeffvel(i)*(-gradPcz(i)-rho0*grz)         
          VfX(j)=-coeffvel(j)*(-gradPcx(j))
          VfZ(j)=-coeffvel(j)*(-gradPcz(j)-rho0*grz) 
          
-       diff(i)=((-VfX(j)*drx-VfZ(j)*drz)*saturazione(j)**alpha)/
-     + sqrt(rr2)
+       diff(i)=((-VfX(j)*frxj-VfZ(j)*frzj)*saturazione(j)**alpha)/rr2
+c     + sqrt(rr2)
 
          
-         dmpdt(i)= dmpdt(i)+diff(i)*pm(j)*(mpf(i)-mpf(j))*fac/rho0
-         dmpdt(j)= dmpdt(j)-diff(i)*pm(i)*(mpf(j)-mpf(i))*fac/rho0
+         
+         dmpdt(i)= dmpdt(i)+diff(i)*pVol(j)*(mpf(i)-mpf(j))
+         dmpdt(j)= dmpdt(j)-diff(i)*pVol(i)*(mpf(j)-mpf(i))
 
 c  ...  Vorticity calculation
 
