@@ -1,7 +1,6 @@
 c234567891123456789212345679312345678941234567895123456789612345678971234567898
       parameter(npar=100000,nb_max=12000,num_FB_max=21)
       parameter(nct_max=30000,nplink_max=120,BETA_sh_corr=0.01)
-      parameter(kcap=15000.d0,alpha=1.d-1)
       include 'precision_kind.2D'
       include 'precision_xz.2D'
       include 'precision_dr.2D'
@@ -13,7 +12,8 @@ c234567891123456789212345679312345678941234567895123456789612345678971234567898
      3                coeffvel(npar),dmpdt(npar),mpfdot(npar),
      4                dPcdx(npar),dPcdz(npar),dPc,mpf(npar),
      5                dmpf(npar),gradPcx(npar),gradPcz(npar), 
-     6                diff(npar),mpfo(npar),permeabilita(npar)
+     6                diff(npar),mpfo(npar),permeabilita(npar),
+     7                dmpItest,dmpJtest,alpha,kcap
       common /ccloc/  xp(npar),zp(npar), xo(npar),zo(npar)
       common /ccloc2/ up(npar),wp(npar),rhop(npar),p(npar),pm(npar),
      2                cs(npar),TEp(npar)

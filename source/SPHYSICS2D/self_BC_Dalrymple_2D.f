@@ -181,10 +181,15 @@ c       absorbed fluid velocity
        diff(i)=((-VfX(j)*frxj-VfZ(j)*frzj)*saturazione(j)**alpha)/rr2
 c     + sqrt(rr2)
 
-         
-         
+         dmpItest=pm(i)+(dmpdt(i)+diff(i)*pVol(j)*(mpf(i)-mpf(j)))*dt2
+         dmpJtest=pm(j)+(dmpdt(j)+diff(i)*pVol(i)*(mpf(j)-mpf(i)))*dt2
+
+
+c        if (((dmpItest.ge.0).or.(dmpItest.le.0.5))
+c     + .and.((dmpJtest.ge.0).or.(dmpJtest.le.0.5))) then
          dmpdt(i)= dmpdt(i)+diff(i)*pVol(j)*(mpf(i)-mpf(j))
-         dmpdt(j)= dmpdt(j)-diff(i)*pVol(i)*(mpf(j)-mpf(i))
+         dmpdt(j)= dmpdt(j)+diff(i)*pVol(i)*(mpf(j)-mpf(i))
+c        endif
         
         
         

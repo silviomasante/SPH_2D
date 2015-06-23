@@ -27,7 +27,7 @@ c
         
         do ii=1,nc(j1,kind_p1)
           i = ibox(j1,kind_p1,ii)
-         
+c        write(*,*)'BREAK'
           do jj=1,nc(j2,kind_p2)
            j = ibox(j2,kind_p2,jj)
             
@@ -154,19 +154,25 @@ c          wx(j) = wx(j) + coefficiente*drz
           
 c       absorbed fluid velocity
  
-         VfX(i)=-coeffvel(i)*(-gradPcx(i))
+        VfX(i)=-coeffvel(i)*(-gradPcx(i))
         VfZ(i)=-coeffvel(i)*(-gradPcz(i)-rho0*grz)         
-         VfX(j)=-coeffvel(j)*(-gradPcx(j))
-         VfZ(j)=-coeffvel(j)*(-gradPcz(j)-rho0*grz) 
+        VfX(j)=-coeffvel(j)*(-gradPcx(j))
+        VfZ(j)=-coeffvel(j)*(-gradPcz(j)-rho0*grz) 
          
        diff(i)=((-VfX(j)*frxj-VfZ(j)*frzj)*saturazione(j)**alpha)/rr2
 c     + sqrt(rr2)
 
          
          
-         dmpdt(i)= dmpdt(i)+diff(i)*pVol(j)*(mpf(i)-mpf(j))
-         dmpdt(j)= dmpdt(j)-diff(i)*pVol(i)*(mpf(j)-mpf(i))
+         dmpItest=pm(i)+(dmpdt(i)+diff(i)*pVol(j)*(mpf(i)-mpf(j)))*dt2
+         dmpJtest=pm(j)+(dmpdt(j)+diff(i)*pVol(i)*(mpf(j)-mpf(i)))*dt2
+         
 
+c        if (((dmpItest.ge.0.d0).or.(dmpItest.le.0.5d0))
+c     + .and.((dmpJtest.ge.0.d0).or.(dmpJtest.le.0.5d0))) then
+         dmpdt(i)= dmpdt(i)+diff(i)*pVol(j)*(mpf(i)-mpf(j))
+         dmpdt(j)= dmpdt(j)+diff(i)*pVol(i)*(mpf(j)-mpf(i))
+c        endif
 c  ...  Vorticity calculation
 
            if(ipoute.eq.1.and.i_vort.eq.1.and.i.gt.nb.and.j.gt.nb)then
@@ -175,7 +181,9 @@ c  ...  Vorticity calculation
 
 	     endif
          enddo
+
         enddo
+        
       endif
       enddo
 

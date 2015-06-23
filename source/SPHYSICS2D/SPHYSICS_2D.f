@@ -124,9 +124,10 @@ c
        gry=0.0
        grz=-g
        viscosita=1d-3
-       
+       kcap=1.d3
+       alpha=1.d-1
        do i=nstart,np
-       permeabilita(i)=1.d-10
+       permeabilita(i)=1.d-12
        coeffvel(i)=permeabilita(i)/(porosita(i)*viscosita)
        enddo
                            

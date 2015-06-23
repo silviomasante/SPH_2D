@@ -1,2 +1,3 @@
-      real(kind=kind_XZ) xp, zp, xo, zo, xm, zm, mpf,mpfo
+      real(kind=kind_XZ) xp, zp, xo, zo, xm, zm, mpf, mpfo
+     +saturazione,Pcap
       double precision xmin_container_double, xmax_container_double

@@ -43,7 +43,8 @@ c
 
       call check_limits_2D    !<=========  TEMPORARY
       call ini_divide(2)
-      call divide(nbp1,np,2)  
+c      call divide(nbp1,np,2)  
+      call divide(nstart,np,2)  
 
        if(iopt_movingObject.eq.1)then
          call recover_list
@@ -108,13 +109,14 @@ c         write(*,*) i,mpfo(i),mpf(i)
        enddo
 
 
-      do i=nbp1,np
+c      do i=nbp1,np
+      do i=nstart,np
          rhop(i) = rhoo(i) + dt2*rdot(i)
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
 
          mpf(i)=mpfo(i)+dt2*mpfdot(i)
-         
+c         write(*,*) i, mpf(i)
 
          
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i))
@@ -139,6 +141,7 @@ c         write(*,*) i,mpfo(i),mpf(i)
 
       
       do i=nbp1,np
+c      do i=nstart,np
          xp(i) = xo(i) + dt2*xdot(i)
          zp(i) = zo(i) + dt2*zdot(i)
         
@@ -184,7 +187,8 @@ c  ...  corrector
 c
       call check_limits_2D       !<=========  TEMPORARY
       call ini_divide(2)
-      call divide(nbp1,np,2)    
+c      call divide(nbp1,np,2)   
+      call divide(nstart,np,2) 
 
        if(iopt_movingObject.eq.1)then
          call recover_list
@@ -201,10 +205,11 @@ c
            dt=min(ddt_p,ddt_c)  !Time step to be used in next loop
       endif
 
-      do i=nbp1,np
+c      do i=nbp1,np
+      do i=nstart,np
          rhop(i) = rhoo(i) + dt2*rdot(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
-         mpf(i)=mpfo(i)+dt2*mpfdot(i)
+         mpf(i)=mpf(i)+dt2*mpfdot(i)
 
       end do
 
@@ -218,6 +223,7 @@ c
       endif 
 
       do i=nbp1,np
+c      do i=nstart,np
          xp(i) = xo(i) + dt2*xdot(i)
          zp(i) = zo(i) + dt2*zdot(i)
          
@@ -229,6 +235,7 @@ c
       
       !-- Perform final integration correction --
       do i=nbp1,np
+c      do i=nstart,np
          rhop(i) = 2.*rhop(i) - rhoo(i)
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=2.*TEp(i)-TEo(i)
