@@ -38,9 +38,9 @@ c
               
        REAL time_begin, time_end              
        CALL CPU_TIME (time_begin)
-       write(*,*)'*************'
-       write(*,*)'AHOOOOOOOOOOO'
-       write(*,*)'*************'
+c       write(*,*)'*************'
+c       write(*,*)'AHOOOOOOOOOOO'
+c       write(*,*)'*************'
        open(80,file='sph.out')
        
        write(80,*) ' '
@@ -97,9 +97,12 @@ c
 c
 c  ...  initialization
 c      
+c    read data from INDAT and initializes variables
        call getdata
        call energy(g)
-       
+
+c    divide the domain in cells and set each boundary particle to a cell. 
+c    the boundary particles are fixed and thi operation is made only at the beginning       
        call ini_divide(1)
        call divide(1,nbf,1)
        call keep_list
@@ -123,13 +126,23 @@ c
        grx=0.0
        gry=0.0
        grz=-g
-       viscosita=1d-3
-       kcap=1.d3
+       
+c      my parameters for the absorption       
+       viscosita=1.d-3
+       ccap=1.d3
        alpha=1.d-1
        do i=nstart,np
        permeabilita(i)=1.d-12
        coeffvel(i)=permeabilita(i)/(porosita(i)*viscosita)
+       coeffsat(i)=1.d0/(rho0*porosita(i)*pVol(i))
+       if (i.le.nb) then
+         saturazione(i)= fmp(i)*coeffsat(i)
+       else
+         saturazione(i)= 1.d0
+       endif
        enddo
+c    -------------------------------       
+       
                            
        do while (time.lt.tmax)
           visc_dt=0.

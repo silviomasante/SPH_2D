@@ -40,7 +40,7 @@ c
         write(*,*) 'In step:   time = ',time,' itime = ',itime
       endif
 
-
+c     attributes every particle to his cell 
       call check_limits_2D    !<=========  TEMPORARY
       call ini_divide(2)
 c      call divide(nbp1,np,2)  
@@ -103,9 +103,9 @@ c         write(*,*)'*****'
          
         
          
-c         mpf(i)=mpfo(i)+dt2*mpfdot(i)
-         mpfo(i)=mpf(i)
-c         write(*,*) i,mpfo(i),mpf(i)
+c         fmp(i)=fmpo(i)+dt2*fmpdot(i)
+         fmpo(i)=fmp(i)
+c         write(*,*) i,fmpo(i),fmp(i)
        enddo
 
 
@@ -115,8 +115,8 @@ c      do i=nbp1,np
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
 
-         mpf(i)=mpfo(i)+dt2*mpfdot(i)
-c         write(*,*) i, mpf(i)
+         fmp(i)=fmpo(i)+dt2*dmpdt(i)
+c         write(*,*) i, fmp(i)
 
          
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i))
@@ -209,7 +209,7 @@ c      do i=nbp1,np
       do i=nstart,np
          rhop(i) = rhoo(i) + dt2*rdot(i)
          TEp(i)=TEo(i)+dt2*TEdot(i)
-         mpf(i)=mpf(i)+dt2*mpfdot(i)
+         fmp(i)=fmpo(i)+dt2*dmpdt(i)
 
       end do
 
@@ -234,12 +234,12 @@ c      do i=nstart,np
 
       
       !-- Perform final integration correction --
-      do i=nbp1,np
-c      do i=nstart,np
+c      do i=nbp1,np
+      do i=nstart,np
          rhop(i) = 2.*rhop(i) - rhoo(i)
          pVol(i) = pm(i)/rhop(i)
          TEp(i)=2.*TEp(i)-TEo(i)
-       
+         fmp(i)=2.*fmp(i)-fmpo(i)
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i)) 
       end do
 

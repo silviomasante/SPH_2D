@@ -37,9 +37,9 @@ c       initial data for SPH models                                             
       
       real xp(np_max),zp(np_max),up(np_max),wp(np_max)
       real rhop(np_max),p(np_max),pm(np_max),TEp(np_max)
+      real fmp(np_max),porosita(np_max),Pcap(np_max)
       real time(i_PART_counter_max), DT(i_PART_counter_max)
-      real  DT1(i_PART_counter_max),DT2(i_PART_counter_max) 
-      real mpf(npar),porosita(npar),Pcap(npar) 
+      real  DT1(i_PART_counter_max),DT2(i_PART_counter_max)  
       
       real np_phase_start(num_phase_max),np_phase(num_phase_max)
       real rho0_phase(num_phase_max),P0_phase(num_phase_max) 
@@ -212,8 +212,11 @@ c        enddo
 
          do i=1,np
              read(23,*,end=300) xp(i),zp(i),up(i),wp(i),rhop(i),
-     +                p(i),pm(i),mpf(i),porosita(i),Pcap(i)
+     +                p(i),pm(i),fmp(i),porosita(i),Pcap(i)
+
             npp=npp+1
+c            write(*,*)xp(i),zp(i),up(i),wp(i),rhop(i),
+c    +                p(i),pm(i),fmp(i),porosita(i),Pcap(i)
          enddo
 300    np=npp
 
@@ -273,10 +276,40 @@ c       % WRITE IN PRESSURE DATA
         write(24,202)string1
         write(24,202)string2
         do ii=1,np
-          write(24,*)p(ii)
+          write(24,*) p(ii)
         enddo
         string3 = '    </DataArray>'
         write(24,202)string3
+        
+c       % WRITE Fluidmass     
+        string1 = '    <DataArray type='//DQ//'Float32'//DQ//' Name='//D
+     &Q//'FM'//DQ//' format='//DQ//'ascii'//DQ//'>'
+        write(24,202)string1
+        do ii=1,np
+          write(24,*)fmp(ii)
+        enddo
+        string3 = '    </DataArray>'
+        write(24,202) string3
+        
+        c       % WRITE Fluidmass     
+        string1 = '    <DataArray type='//DQ//'Float32'//DQ//' Name='//D
+     &Q//'por'//DQ//' format='//DQ//'ascii'//DQ//'>'
+        write(24,202)string1
+        do ii=1,np
+          write(24,*)porosita(ii)
+        enddo
+        string3 = '    </DataArray>'
+        write(24,202) string3
+
+c       % WRITE Fluidmass     
+        string1 = '    <DataArray type='//DQ//'Float32'//DQ//' Name='//D
+     &Q//'Pcap'//DQ//' format='//DQ//'ascii'//DQ//'>'
+        write(24,202)string1
+        do ii=1,np
+          write(24,*)Pcap(ii)
+        enddo
+        string3 = '    </DataArray>'
+        write(24,202) string3
 
 c       % WRITE DENSITY DATA        
         string1 = '    <DataArray type='//DQ//'Float32'//DQ//' Name='//D
@@ -304,16 +337,6 @@ c       % WRITE W_VELOCITY DATA
         write(24,202)string1
         do ii=1,np
           write(24,*)wp(ii)
-        enddo
-        string3 = '    </DataArray>'
-        write(24,202) string3
-        
-c       % WRITE FLUID MASS DATA        
-        string1 = '    <DataArray type='//DQ//'Float32'//DQ//' Name='//D
-     &Q//'FLuid Mass'//DQ//' format='//DQ//'ascii'//DQ//'>'
-        write(24,202)string1
-        do ii=1,np
-          write(24,*)mpf(ii)
         enddo
         string3 = '    </DataArray>'
         write(24,202) string3

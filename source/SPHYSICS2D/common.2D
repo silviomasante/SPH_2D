@@ -9,11 +9,11 @@ c234567891123456789212345679312345678941234567895123456789612345678971234567898
       common /silvio/ Svmax,Sr002,Sn00,num,denom,coefficiente,
      1                saturazione(npar),porosita(npar),Pcap(npar),
      2                VfX(npar),VfZ(npar),coeffsat(npar),
-     3                coeffvel(npar),dmpdt(npar),mpfdot(npar),
-     4                dPcdx(npar),dPcdz(npar),dPc,mpf(npar),
+     3                coeffvel(npar),dmpdt(npar),fmpdot(npar),
+     4                dPcdx(npar),dPcdz(npar),dPc,fmp(npar),
      5                dmpf(npar),gradPcx(npar),gradPcz(npar), 
-     6                diff(npar),mpfo(npar),permeabilita(npar),
-     7                dmpItest,dmpJtest,alpha,kcap
+     6                diff(npar),fmpo(npar),permeabilita(npar),
+     7                dmpItest,dmpJtest,alpha,ccap
       common /ccloc/  xp(npar),zp(npar), xo(npar),zo(npar)
       common /ccloc2/ up(npar),wp(npar),rhop(npar),p(npar),pm(npar),
      2                cs(npar),TEp(npar)

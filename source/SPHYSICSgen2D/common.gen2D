@@ -5,7 +5,7 @@ c234567891123456789212345679312345678941234567895123456789612345678971234567898
       parameter(n_trapezoid_max = 2)
 
       include 'precision_xz.gen2D'
-      common /Silvio/ mpf(npar),porosita(npar)
+      common /Silvio/ fmp(npar),porosita(npar),Pcap(npar)
       common /ccloc/ xp(npar),zp(npar)
       common /ccloc2/ up(npar),wp(npar),rhop(npar),p(npar),
      1               pm(npar),cs(npar),TEp(npar)

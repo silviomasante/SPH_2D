@@ -456,15 +456,15 @@ c	__________  File IPART
       open(13,file='IPART')
 
       do i=1,np
-        write(*,*) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
-     + mpf(i),porosita(i)
+c        write(*,*) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
+c     + fmp(i),porosita(i),Pcap(i)
         write(13,122) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
-     + mpf(i),porosita(i)
+     + fmp(i),porosita(i),Pcap(i)
         
       enddo
 
 
-122   format(9e16.8)
+122   format(10e16.8)
       close(13)
 
       print*,'IPART file written'
@@ -1422,7 +1422,7 @@ c	____________________ SUBROUTINE PRESSURE
       
 	
 	  pm(nn)=vnorm_mass*rhop(nn)*dx*dz
-      mpf(nn)=pm(nn)
+      fmp(nn)=pm(nn)
       return
 	end
 
@@ -1456,7 +1456,7 @@ c	____________________ SUBROUTINE CORRECT_P_BOUNDARIES
                pm(nn)=0.5*rhop(nn)*dr
             endif
 	   endif
-        mpf(nn)=0.0
+        fmp(nn)=0.0
         porosita(nn)=0.7
 	enddo
 
@@ -1477,7 +1477,7 @@ c	____________________ SUBROUTINE P_BOUNDARIES
 	do nn=1,nb
 	   rhop(nn)=rho0
          p(nn)=0.
-         mpf(nn)=0.
+         fmp(nn)=0.
          porosita(nn)=0.7
 
 	   if (IBC.eq.1) then

@@ -197,17 +197,17 @@ c      -- Periodic Boundary Calls in X-Direction --
          gradPcz(i)=dPcdz(i)
          
 
-         
-         mpfdot(i)=dmpdt(i)
-         
+
+         fmpdot(i)=dmpdt(i)
+c         write(*,*)dmpdt(i),fmpdot(i)
          coeffsat(i)=1.d0/(rho0*porosita(i)*pVol(i))
          if (i.le.nb) then
-         saturazione(i)= mpf(i)*coeffsat(i)
+         saturazione(i)= fmp(i)*coeffsat(i)
          else
          saturazione(i)= 1.d0
          endif
-         Pcap(i)=kcap*(1.d0-saturazione(i))**alpha
-       
+         Pcap(i)=ccap*(1.d0-saturazione(i))**alpha
+c       
        enddo
 
              

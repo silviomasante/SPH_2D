@@ -1,1 +1,1110 @@
   
+ <SPHYSICS>  Copyright (C) <2009>
+ <Prof. Robert Dalrymple, Prof. M. Gomez Gesteira, 
+ Dr Benedict Rogers, Dr Alejandro Crespo, 
+ Dr Muthukumar Narayanaswamy, Dr Shan Zou, & Dr Andrea Panizzo >
+ This program comes with ABSOLUTELY NO WARRANTY;    
+ This is free software, and you are welcome to      
+ redistribute it under conditions stated in         
+ the GPL License;                                   
+  
+  ---     SPHYSICS_2D.F       ---
+  ---   Distributed under     ---
+  ---    the GPL License      ---
+
+  
+ Periodicity 
+ i_periodicOBs
+ X-Direction:            0
+ Y-Direction:            0
+ Z-Direction:            0
+  
+ np, nb, nbf, ivar_dt, dt          118          91          91           1  9.99999975E-05
+ h =   0.65053827    
+ (dx0,dy0,dz0)=  0.50000000       0.0000000      0.50000000    
+   280285.72      1.00000005E-03   7.0000000       1000.0000    
+ Still Water Depth h_SWL =    2.0000000    
+ CFL_number =   0.20000000    
+ cs0=sqrt(gamma*B/rho0)=    44.294468    
+ Integer gamma, i_gamma = nint(gamma) =            7
+ ndt_DBCPerform           15
+ lattice               2
+ vnorm_mass   0.50000000    
+ Initialising ndt_FilterPerform           30
+ i_restartRun            0
+ Reading in IPART                                   NORMALS.init                            
+ Using dt   9.99999975E-05
+  
+ Moving Objects:iopt_movingObject            0
+  
+  All          118  initial points read successfully
+  
+  -- Kernel Information --
+ Kernel Choice =            5
+  
+ Wendland kernel
+   1.3161625      -10.116676    
+   1.2006474    
+  
+ xmin_container, xmax_container =  -0.25000000       8.2500000    
+ zmin_container =  -0.25000000    
+  
+ zcontrol    4.8892522       4.0650539    
+ xmin, xmax =  -0.31505382       8.3150539    
+ zmin, zmax =  -0.31505382       4.0650539    
+ ncx/z    =            7           4
+ nct=           28
+ In step:   time =    0.0000000      itime =            0
+ PART_0001                               
+ In poute_2D, itime =            8
+ time, dt    2.29721889E-02  2.85652792E-03   ok
+ PART_0002                               
+ In poute_2D, itime =           15
+ time, dt    4.28782105E-02  2.83833011E-03   ok
+ PART_0003                               
+ In poute_2D, itime =           23
+ time, dt    6.54894635E-02  2.82116584E-03   ok
+ PART_0004                               
+ In poute_2D, itime =           30
+ time, dt    8.52557570E-02  2.82232626E-03   ok
+ PART_0005                               
+ In poute_2D, itime =           37
+ time, dt    0.10499673      2.81173433E-03   ok
+ PART_0006                               
+ In poute_2D, itime =           44
+ time, dt    0.12465547      2.80562602E-03   ok
+ PART_0007                               
+ In poute_2D, itime =           51
+ time, dt    0.14424205      2.79080891E-03   ok
+ PART_0008                               
+ In poute_2D, itime =           58
+ time, dt    0.16370520      2.77185626E-03   ok
+ PART_0009                               
+ In poute_2D, itime =           65
+ time, dt    0.18316336      2.78460607E-03   ok
+ PART_0010                               
+ In poute_2D, itime =           73
+ time, dt    0.20533060      2.74651707E-03   ok
+ PART_0011                               
+ In poute_2D, itime =           80
+ time, dt    0.22445238      2.72581610E-03   ok
+ PART_0012                               
+ In poute_2D, itime =           87
+ time, dt    0.24357098      2.73981458E-03   ok
+ PART_0013                               
+ In poute_2D, itime =           94
+ time, dt    0.26285678      2.75459606E-03   ok
+ PART_0014                               
+ In poute_2D, itime =          102
+ time, dt    0.28474507      2.72503775E-03   ok
+ PART_0015                               
+ In poute_2D, itime =          109
+ time, dt    0.30380455      2.72664521E-03   ok
+ PART_0016                               
+ In poute_2D, itime =          116
+ time, dt    0.32297575      2.74353358E-03   ok
+ PART_0017                               
+ In poute_2D, itime =          124
+ time, dt    0.34499821      2.75737070E-03   ok
+ PART_0018                               
+ In poute_2D, itime =          131
+ time, dt    0.36413553      2.70996406E-03   ok
+ PART_0019                               
+ In poute_2D, itime =          138
+ time, dt    0.38276112      2.63339886E-03   ok
+ PART_0020                               
+ In poute_2D, itime =          146
+ time, dt    0.40350419      2.56652688E-03   ok
+ PART_0021                               
+ In poute_2D, itime =          154
+ time, dt    0.42382452      2.48252135E-03   ok
+ PART_0022                               
+ In poute_2D, itime =          162
+ time, dt    0.44292936      2.33054440E-03   ok
+ PART_0023                               
+ In poute_2D, itime =          171
+ time, dt    0.46350917      2.26392155E-03   ok
+ PART_0024                               
+ In poute_2D, itime =          180
+ time, dt    0.48374763      2.23826198E-03   ok
+ PART_0025                               
+ In poute_2D, itime =          189
+ time, dt    0.50416917      2.26695952E-03   ok
+ PART_0026                               
+ In poute_2D, itime =          198
+ time, dt    0.52445549      2.24289112E-03   ok
+ PART_0027                               
+ In poute_2D, itime =          206
+ time, dt    0.54234099      2.23386614E-03   ok
+ PART_0028                               
+ In poute_2D, itime =          215
+ time, dt    0.56308442      2.37045297E-03   ok
+ PART_0029                               
+ In poute_2D, itime =          224
+ time, dt    0.58480847      2.45512696E-03   ok
+ PART_0030                               
+ In poute_2D, itime =          232
+ time, dt    0.60473353      2.49696244E-03   ok
+ PART_0031                               
+ In poute_2D, itime =          240
+ time, dt    0.62475294      2.50689080E-03   ok
+ PART_0032                               
+ In poute_2D, itime =          247
+ time, dt    0.64259982      2.57333205E-03   ok
+ PART_0033                               
+ In poute_2D, itime =          255
+ time, dt    0.66335028      2.57503358E-03   ok
+ PART_0034                               
+ In poute_2D, itime =          263
+ time, dt    0.68380380      2.54588434E-03   ok
+ PART_0035                               
+ In poute_2D, itime =          271
+ time, dt    0.70421869      2.60240189E-03   ok
+ PART_0036                               
+ In poute_2D, itime =          279
+ time, dt    0.72483349      2.54606828E-03   ok
+ PART_0037                               
+ In poute_2D, itime =          287
+ time, dt    0.74499387      2.50960910E-03   ok
+ PART_0038                               
+ In poute_2D, itime =          294
+ time, dt    0.76253784      2.51697260E-03   ok
+ PART_0039                               
+ In poute_2D, itime =          302
+ time, dt    0.78276944      2.52661179E-03   ok
+ PART_0040                               
+ In poute_2D, itime =          310
+ time, dt    0.80266094      2.46966374E-03   ok
+ PART_0041                               
+ In poute_2D, itime =          319
+ time, dt    0.82478964      2.44576065E-03   ok
+ PART_0042                               
+ In poute_2D, itime =          327
+ time, dt    0.84438413      2.46444182E-03   ok
+ PART_0043                               
+ In poute_2D, itime =          335
+ time, dt    0.86454755      2.57072924E-03   ok
+ PART_0044                               
+ In poute_2D, itime =          342
+ time, dt    0.88259631      2.57887528E-03   ok
+ PART_0045                               
+ In poute_2D, itime =          350
+ time, dt    0.90304720      2.53566215E-03   ok
+ PART_0046                               
+ In poute_2D, itime =          358
+ time, dt    0.92316741      2.50519207E-03   ok
+ PART_0047                               
+ In poute_2D, itime =          366
+ time, dt    0.94339299      2.54540914E-03   ok
+ PART_0048                               
+ In poute_2D, itime =          374
+ time, dt    0.96393937      2.58496311E-03   ok
+ PART_0049                               
+ In poute_2D, itime =          382
+ time, dt    0.98468733      2.59373174E-03   ok
+ PART_0050                               
+ In poute_2D, itime =          389
+ time, dt     1.0027615      2.56642327E-03   ok
+ PART_0051                               
+ In poute_2D, itime =          397
+ time, dt     1.0229757      2.47571967E-03   ok
+ PART_0052                               
+ In poute_2D, itime =          405
+ time, dt     1.0424360      2.40950170E-03   ok
+ PART_0053                               
+ In poute_2D, itime =          414
+ time, dt     1.0640538      2.40367791E-03   ok
+ PART_0054                               
+ In poute_2D, itime =          422
+ time, dt     1.0834908      2.47868826E-03   ok
+ PART_0055                               
+ In poute_2D, itime =          430
+ time, dt     1.1033746      2.48890277E-03   ok
+ PART_0056                               
+ In poute_2D, itime =          438
+ time, dt     1.1233022      2.49536335E-03   ok
+ PART_0057                               
+ In poute_2D, itime =          446
+ time, dt     1.1432685      2.47499975E-03   ok
+ PART_0058                               
+ In poute_2D, itime =          454
+ time, dt     1.1629555      2.45856890E-03   ok
+ PART_0059                               
+ In poute_2D, itime =          463
+ time, dt     1.1846428      2.37821671E-03   ok
+ PART_0060                               
+ In poute_2D, itime =          471
+ time, dt     1.2035451      2.35885568E-03   ok
+ PART_0061                               
+ In poute_2D, itime =          479
+ time, dt     1.2225156      2.38423375E-03   ok
+ PART_0062                               
+ In poute_2D, itime =          488
+ time, dt     1.2445878      2.46891659E-03   ok
+ PART_0063                               
+ In poute_2D, itime =          496
+ time, dt     1.2643172      2.46202946E-03   ok
+ PART_0064                               
+ In poute_2D, itime =          504
+ time, dt     1.2839651      2.44937348E-03   ok
+ PART_0065                               
+ In poute_2D, itime =          512
+ time, dt     1.3036876      2.50735506E-03   ok
+ PART_0066                               
+ In poute_2D, itime =          520
+ time, dt     1.3237982      2.49393354E-03   ok
+ PART_0067                               
+ In poute_2D, itime =          528
+ time, dt     1.3435388      2.45670299E-03   ok
+ PART_0068                               
+ In poute_2D, itime =          536
+ time, dt     1.3632244      2.46937643E-03   ok
+ PART_0069                               
+ In poute_2D, itime =          544
+ time, dt     1.3832921      2.53814785E-03   ok
+ PART_0070                               
+ In poute_2D, itime =          552
+ time, dt     1.4035333      2.51628994E-03   ok
+ PART_0071                               
+ In poute_2D, itime =          560
+ time, dt     1.4233762      2.41943821E-03   ok
+ PART_0072                               
+ In poute_2D, itime =          569
+ time, dt     1.4445419      2.31892988E-03   ok
+ PART_0073                               
+ In poute_2D, itime =          577
+ time, dt     1.4638737      2.44250870E-03   ok
+ PART_0074                               
+ In poute_2D, itime =          585
+ time, dt     1.4834126      2.45042890E-03   ok
+ PART_0075                               
+ In poute_2D, itime =          593
+ time, dt     1.5032256      2.49099592E-03   ok
+ PART_0076                               
+ In poute_2D, itime =          601
+ time, dt     1.5232120      2.56990897E-03   ok
+ PART_0077                               
+ In poute_2D, itime =          609
+ time, dt     1.5438402      2.58361991E-03   ok
+ PART_0078                               
+ In poute_2D, itime =          617
+ time, dt     1.5644877      2.57034483E-03   ok
+ PART_0079                               
+ In poute_2D, itime =          625
+ time, dt     1.5846436      2.47209030E-03   ok
+ PART_0080                               
+ In poute_2D, itime =          633
+ time, dt     1.6043741      2.48468295E-03   ok
+ PART_0081                               
+ In poute_2D, itime =          641
+ time, dt     1.6237582      2.40201969E-03   ok
+ PART_0082                               
+ In poute_2D, itime =          649
+ time, dt     1.6429051      2.32863100E-03   ok
+ PART_0083                               
+ In poute_2D, itime =          658
+ time, dt     1.6631608      2.21652561E-03   ok
+ PART_0084                               
+ In poute_2D, itime =          667
+ time, dt     1.6840096      2.21515168E-03   ok
+ PART_0085                               
+ In poute_2D, itime =          676
+ time, dt     1.7030240      2.07336782E-03   ok
+ PART_0086                               
+ In poute_2D, itime =          686
+ time, dt     1.7238621      2.11079605E-03   ok
+ PART_0087                               
+ In poute_2D, itime =          696
+ time, dt     1.7428359      1.50307349E-03   ok
+ PART_0088                               
+ In poute_2D, itime =          709
+ time, dt     1.7629076      1.66158681E-03   ok
+ PART_0089                               
+ In poute_2D, itime =          720
+ time, dt     1.7825036      1.85467931E-03   ok
+ PART_0090                               
+ In poute_2D, itime =          730
+ time, dt     1.8027148      2.02995888E-03   ok
+ PART_0091                               
+ In poute_2D, itime =          740
+ time, dt     1.8238466      2.21591769E-03   ok
+ PART_0092                               
+ In poute_2D, itime =          749
+ time, dt     1.8427556      1.98547426E-03   ok
+ PART_0093                               
+ In poute_2D, itime =          759
+ time, dt     1.8632684      1.96109340E-03   ok
+ PART_0094                               
+ In poute_2D, itime =          770
+ time, dt     1.8836256      1.81409356E-03   ok
+ PART_0095                               
+ In poute_2D, itime =          781
+ time, dt     1.9029640      1.60221325E-03   ok
+ PART_0096                               
+ In poute_2D, itime =          793
+ time, dt     1.9225283      1.64289784E-03   ok
+ PART_0097                               
+ In poute_2D, itime =          806
+ time, dt     1.9430536      1.60092080E-03   ok
+ PART_0098                               
+ In poute_2D, itime =          817
+ time, dt     1.9633029      1.98175432E-03   ok
+ PART_0099                               
+ In poute_2D, itime =          827
+ time, dt     1.9840364      2.15048552E-03   ok
+ PART_0100                               
+ In poute_2D, itime =          836
+ time, dt     2.0035603      2.15209113E-03   ok
+ PART_0101                               
+ In poute_2D, itime =          845
+ time, dt     2.0240114      2.29873415E-03   ok
+ PART_0102                               
+ In poute_2D, itime =          854
+ time, dt     2.0437825      2.13657483E-03   ok
+ PART_0103                               
+ In poute_2D, itime =          863
+ time, dt     2.0632491      2.24407413E-03   ok
+ PART_0104                               
+ In poute_2D, itime =          872
+ time, dt     2.0838723      2.34791590E-03   ok
+ PART_0105                               
+ In poute_2D, itime =          880
+ time, dt     2.1023252      2.29611318E-03   ok
+ PART_0106                               
+ In poute_2D, itime =          889
+ time, dt     2.1230674      2.31730565E-03   ok
+ PART_0107                               
+ In poute_2D, itime =          898
+ time, dt     2.1439476      2.24986859E-03   ok
+ PART_0108                               
+ In poute_2D, itime =          907
+ time, dt     2.1633873      2.08349852E-03   ok
+ PART_0109                               
+ In poute_2D, itime =          917
+ time, dt     2.1840439      2.10245512E-03   ok
+ PART_0110                               
+ In poute_2D, itime =          926
+ time, dt     2.2037067      2.23274436E-03   ok
+ PART_0111                               
+ In poute_2D, itime =          935
+ time, dt     2.2237236      2.22451449E-03   ok
+ PART_0112                               
+ In poute_2D, itime =          944
+ time, dt     2.2435050      2.19861232E-03   ok
+ PART_0113                               
+ In poute_2D, itime =          953
+ time, dt     2.2633679      2.20483285E-03   ok
+ PART_0114                               
+ In poute_2D, itime =          962
+ time, dt     2.2836866      2.30303244E-03   ok
+ PART_0115                               
+ In poute_2D, itime =          971
+ time, dt     2.3043673      2.30658357E-03   ok
+ PART_0116                               
+ In poute_2D, itime =          979
+ time, dt     2.3230402      2.33488530E-03   ok
+ PART_0117                               
+ In poute_2D, itime =          988
+ time, dt     2.3442888      2.36884155E-03   ok
+ PART_0118                               
+ In poute_2D, itime =          996
+ time, dt     2.3638177      2.46654171E-03   ok
+ PART_0119                               
+ In poute_2D, itime =         1004
+ time, dt     2.3835449      2.43877410E-03   ok
+ PART_0120                               
+ In poute_2D, itime =         1013
+ time, dt     2.4042690      2.24920758E-03   ok
+ PART_0121                               
+ In poute_2D, itime =         1021
+ time, dt     2.4224143      2.36571790E-03   ok
+ PART_0122                               
+ In poute_2D, itime =         1030
+ time, dt     2.4440038      2.38402304E-03   ok
+ PART_0123                               
+ In poute_2D, itime =         1038
+ time, dt     2.4630706      2.36171298E-03   ok
+ PART_0124                               
+ In poute_2D, itime =         1047
+ time, dt     2.4837065      2.23746779E-03   ok
+ PART_0125                               
+ In poute_2D, itime =         1056
+ time, dt     2.5045617      2.38147099E-03   ok
+ PART_0126                               
+ In poute_2D, itime =         1064
+ time, dt     2.5226321      2.05762335E-03   ok
+ PART_0127                               
+ In poute_2D, itime =         1074
+ time, dt     2.5420849      1.91836362E-03   ok
+ PART_0128                               
+ In poute_2D, itime =         1084
+ time, dt     2.5622950      2.14859960E-03   ok
+ PART_0129                               
+ In poute_2D, itime =         1093
+ time, dt     2.5822766      2.27297097E-03   ok
+ PART_0130                               
+ In poute_2D, itime =         1102
+ time, dt     2.6025803      2.23303284E-03   ok
+ PART_0131                               
+ In poute_2D, itime =         1111
+ time, dt     2.6223829      2.29331059E-03   ok
+ PART_0132                               
+ In poute_2D, itime =         1120
+ time, dt     2.6428776      2.25933618E-03   ok
+ PART_0133                               
+ In poute_2D, itime =         1129
+ time, dt     2.6631417      2.23071151E-03   ok
+ PART_0134                               
+ In poute_2D, itime =         1138
+ time, dt     2.6830268      2.20069196E-03   ok
+ PART_0135                               
+ In poute_2D, itime =         1147
+ time, dt     2.7036114      2.30532186E-03   ok
+ PART_0136                               
+ In poute_2D, itime =         1156
+ time, dt     2.7240093      2.22742744E-03   ok
+ PART_0137                               
+ In poute_2D, itime =         1165
+ time, dt     2.7439284      2.22153193E-03   ok
+ PART_0138                               
+ In poute_2D, itime =         1174
+ time, dt     2.7644298      2.34792568E-03   ok
+ PART_0139                               
+ In poute_2D, itime =         1182
+ time, dt     2.7828901      2.22922303E-03   ok
+ PART_0140                               
+ In poute_2D, itime =         1191
+ time, dt     2.8021510      2.09388672E-03   ok
+ PART_0141                               
+ In poute_2D, itime =         1201
+ time, dt     2.8231580      2.24224897E-03   ok
+ PART_0142                               
+ In poute_2D, itime =         1210
+ time, dt     2.8432825      2.15247041E-03   ok
+ PART_0143                               
+ In poute_2D, itime =         1220
+ time, dt     2.8635375      1.96829555E-03   ok
+ PART_0144                               
+ In poute_2D, itime =         1230
+ time, dt     2.8830962      1.95793062E-03   ok
+ PART_0145                               
+ In poute_2D, itime =         1239
+ time, dt     2.9022927      2.14651250E-03   ok
+ PART_0146                               
+ In poute_2D, itime =         1249
+ time, dt     2.9238620      2.16845889E-03   ok
+ PART_0147                               
+ In poute_2D, itime =         1258
+ time, dt     2.9436073      2.22049258E-03   ok
+ PART_0148                               
+ In poute_2D, itime =         1266
+ time, dt     2.9624431      2.40893615E-03   ok
+ PART_0149                               
+ In poute_2D, itime =         1275
+ time, dt     2.9825881      2.06225622E-03   ok
+ PART_0150                               
+ In poute_2D, itime =         1285
+ time, dt     3.0030658      2.08297768E-03   ok
+ PART_0151                               
+ In poute_2D, itime =         1294
+ time, dt     3.0223951      2.21909047E-03   ok
+ PART_0152                               
+ In poute_2D, itime =         1303
+ time, dt     3.0425718      2.25920486E-03   ok
+ PART_0153                               
+ In poute_2D, itime =         1312
+ time, dt     3.0632021      2.31526373E-03   ok
+ PART_0154                               
+ In poute_2D, itime =         1321
+ time, dt     3.0843995      2.39245081E-03   ok
+ PART_0155                               
+ In poute_2D, itime =         1329
+ time, dt     3.1033092      2.32233224E-03   ok
+ PART_0156                               
+ In poute_2D, itime =         1338
+ time, dt     3.1240261      2.29772506E-03   ok
+ PART_0157                               
+ In poute_2D, itime =         1347
+ time, dt     3.1441658      2.19892059E-03   ok
+ PART_0158                               
+ In poute_2D, itime =         1356
+ time, dt     3.1640096      2.22218316E-03   ok
+ PART_0159                               
+ In poute_2D, itime =         1365
+ time, dt     3.1843693      2.30365410E-03   ok
+ PART_0160                               
+ In poute_2D, itime =         1373
+ time, dt     3.2031758      2.37903791E-03   ok
+ PART_0161                               
+ In poute_2D, itime =         1382
+ time, dt     3.2246633      2.40443856E-03   ok
+ PART_0162                               
+ In poute_2D, itime =         1390
+ time, dt     3.2437532      2.33117444E-03   ok
+ PART_0163                               
+ In poute_2D, itime =         1399
+ time, dt     3.2644854      2.31611449E-03   ok
+ PART_0164                               
+ In poute_2D, itime =         1408
+ time, dt     3.2836742      1.89500605E-03   ok
+ PART_0165                               
+ In poute_2D, itime =         1418
+ time, dt     3.3025723      1.90825888E-03   ok
+ PART_0166                               
+ In poute_2D, itime =         1428
+ time, dt     3.3223336      2.03359267E-03   ok
+ PART_0167                               
+ In poute_2D, itime =         1438
+ time, dt     3.3435426      2.19862233E-03   ok
+ PART_0168                               
+ In poute_2D, itime =         1446
+ time, dt     3.3624163      2.40987213E-03   ok
+ PART_0169                               
+ In poute_2D, itime =         1455
+ time, dt     3.3836906      2.33796239E-03   ok
+ PART_0170                               
+ In poute_2D, itime =         1464
+ time, dt     3.4036493      2.11163843E-03   ok
+ PART_0171                               
+ In poute_2D, itime =         1473
+ time, dt     3.4229848      2.26167869E-03   ok
+ PART_0172                               
+ In poute_2D, itime =         1482
+ time, dt     3.4437082      2.31571193E-03   ok
+ PART_0173                               
+ In poute_2D, itime =         1491
+ time, dt     3.4643421      2.24101916E-03   ok
+ PART_0174                               
+ In poute_2D, itime =         1500
+ time, dt     3.4839878      2.16625608E-03   ok
+ PART_0175                               
+ In poute_2D, itime =         1509
+ time, dt     3.5044637      2.28907540E-03   ok
+ PART_0176                               
+ In poute_2D, itime =         1517
+ time, dt     3.5229337      2.31449399E-03   ok
+ PART_0177                               
+ In poute_2D, itime =         1526
+ time, dt     3.5439641      2.37885513E-03   ok
+ PART_0178                               
+ In poute_2D, itime =         1534
+ time, dt     3.5632937      2.44781375E-03   ok
+ PART_0179                               
+ In poute_2D, itime =         1542
+ time, dt     3.5830257      2.46678805E-03   ok
+ PART_0180                               
+ In poute_2D, itime =         1550
+ time, dt     3.6027515      2.47623120E-03   ok
+ PART_0181                               
+ In poute_2D, itime =         1558
+ time, dt     3.6226842      2.48974049E-03   ok
+ PART_0182                               
+ In poute_2D, itime =         1567
+ time, dt     3.6447361      2.35885335E-03   ok
+ PART_0183                               
+ In poute_2D, itime =         1575
+ time, dt     3.6626692      2.18531233E-03   ok
+ PART_0184                               
+ In poute_2D, itime =         1585
+ time, dt     3.6841166      2.13223021E-03   ok
+ PART_0185                               
+ In poute_2D, itime =         1594
+ time, dt     3.7036941      2.22270773E-03   ok
+ PART_0186                               
+ In poute_2D, itime =         1603
+ time, dt     3.7239585      2.28492590E-03   ok
+ PART_0187                               
+ In poute_2D, itime =         1611
+ time, dt     3.7426414      2.37418874E-03   ok
+ PART_0188                               
+ In poute_2D, itime =         1620
+ time, dt     3.7633402      2.24445248E-03   ok
+ PART_0189                               
+ In poute_2D, itime =         1629
+ time, dt     3.7845213      2.38862424E-03   ok
+ PART_0190                               
+ In poute_2D, itime =         1637
+ time, dt     3.8037832      2.41612480E-03   ok
+ PART_0191                               
+ In poute_2D, itime =         1645
+ time, dt     3.8230550      2.39946716E-03   ok
+ PART_0192                               
+ In poute_2D, itime =         1654
+ time, dt     3.8449352      2.48385849E-03   ok
+ PART_0193                               
+ In poute_2D, itime =         1662
+ time, dt     3.8642402      2.34315824E-03   ok
+ PART_0194                               
+ In poute_2D, itime =         1670
+ time, dt     3.8827944      2.30703177E-03   ok
+ PART_0195                               
+ In poute_2D, itime =         1679
+ time, dt     3.9034569      2.28685210E-03   ok
+ PART_0196                               
+ In poute_2D, itime =         1688
+ time, dt     3.9243648      2.32859980E-03   ok
+ PART_0197                               
+ In poute_2D, itime =         1696
+ time, dt     3.9432933      2.40602484E-03   ok
+ PART_0198                               
+ In poute_2D, itime =         1704
+ time, dt     3.9624908      2.38624820E-03   ok
+ PART_0199                               
+ In poute_2D, itime =         1713
+ time, dt     3.9842544      2.48547643E-03   ok
+ PART_0200                               
+ In poute_2D, itime =         1721
+ time, dt     4.0043750      2.50446657E-03   ok
+ PART_0201                               
+ In poute_2D, itime =         1729
+ time, dt     4.0239291      2.40290817E-03   ok
+ PART_0202                               
+ In poute_2D, itime =         1737
+ time, dt     4.0430222      2.39109760E-03   ok
+ PART_0203                               
+ In poute_2D, itime =         1745
+ time, dt     4.0624990      2.46274937E-03   ok
+ PART_0204                               
+ In poute_2D, itime =         1754
+ time, dt     4.0848851      2.48514116E-03   ok
+ PART_0205                               
+ In poute_2D, itime =         1762
+ time, dt     4.1045828      2.44859490E-03   ok
+ PART_0206                               
+ In poute_2D, itime =         1770
+ time, dt     4.1240029      2.40802951E-03   ok
+ PART_0207                               
+ In poute_2D, itime =         1778
+ time, dt     4.1433277      2.40591262E-03   ok
+ PART_0208                               
+ In poute_2D, itime =         1786
+ time, dt     4.1625891      2.41479906E-03   ok
+ PART_0209                               
+ In poute_2D, itime =         1795
+ time, dt     4.1844993      2.45126383E-03   ok
+ PART_0210                               
+ In poute_2D, itime =         1803
+ time, dt     4.2041245      2.47087842E-03   ok
+ PART_0211                               
+ In poute_2D, itime =         1811
+ time, dt     4.2240367      2.49873940E-03   ok
+ PART_0212                               
+ In poute_2D, itime =         1819
+ time, dt     4.2440777      2.50240159E-03   ok
+ PART_0213                               
+ In poute_2D, itime =         1827
+ time, dt     4.2639771      2.47961702E-03   ok
+ PART_0214                               
+ In poute_2D, itime =         1835
+ time, dt     4.2840772      2.54142098E-03   ok
+ PART_0215                               
+ In poute_2D, itime =         1843
+ time, dt     4.3046865      2.59642000E-03   ok
+ PART_0216                               
+ In poute_2D, itime =         1850
+ time, dt     4.3228269      2.58101942E-03   ok
+ PART_0217                               
+ In poute_2D, itime =         1858
+ time, dt     4.3430657      2.49875663E-03   ok
+ PART_0218                               
+ In poute_2D, itime =         1866
+ time, dt     4.3634291      2.57176207E-03   ok
+ PART_0219                               
+ In poute_2D, itime =         1874
+ time, dt     4.3840485      2.55663064E-03   ok
+ PART_0220                               
+ In poute_2D, itime =         1882
+ time, dt     4.4041643      2.48659006E-03   ok
+ PART_0221                               
+ In poute_2D, itime =         1890
+ time, dt     4.4239178      2.46498873E-03   ok
+ PART_0222                               
+ In poute_2D, itime =         1898
+ time, dt     4.4443707      2.56601605E-03   ok
+ PART_0223                               
+ In poute_2D, itime =         1906
+ time, dt     4.4650879      2.60694697E-03   ok
+ PART_0224                               
+ In poute_2D, itime =         1913
+ time, dt     4.4831352      2.55815149E-03   ok
+ PART_0225                               
+ In poute_2D, itime =         1921
+ time, dt     4.5036774      2.65695900E-03   ok
+ PART_0226                               
+ In poute_2D, itime =         1929
+ time, dt     4.5247011      2.61572283E-03   ok
+ PART_0227                               
+ In poute_2D, itime =         1936
+ time, dt     4.5430183      2.61463225E-03   ok
+ PART_0228                               
+ In poute_2D, itime =         1944
+ time, dt     4.5635576      2.49644509E-03   ok
+ PART_0229                               
+ In poute_2D, itime =         1952
+ time, dt     4.5833259      2.53313058E-03   ok
+ PART_0230                               
+ In poute_2D, itime =         1960
+ time, dt     4.6034603      2.49619060E-03   ok
+ PART_0231                               
+ In poute_2D, itime =         1968
+ time, dt     4.6231136      2.42738309E-03   ok
+ PART_0232                               
+ In poute_2D, itime =         1977
+ time, dt     4.6448073      2.40920810E-03   ok
+ PART_0233                               
+ In poute_2D, itime =         1985
+ time, dt     4.6645260      2.51066079E-03   ok
+ PART_0234                               
+ In poute_2D, itime =         1993
+ time, dt     4.6845407      2.48542707E-03   ok
+ PART_0235                               
+ In poute_2D, itime =         2001
+ time, dt     4.7042637      2.45505455E-03   ok
+ PART_0236                               
+ In poute_2D, itime =         2009
+ time, dt     4.7239428      2.46909517E-03   ok
+ PART_0237                               
+ In poute_2D, itime =         2017
+ time, dt     4.7438607      2.47579068E-03   ok
+ PART_0238                               
+ In poute_2D, itime =         2025
+ time, dt     4.7634802      2.43736897E-03   ok
+ PART_0239                               
+ In poute_2D, itime =         2033
+ time, dt     4.7829280      2.43310863E-03   ok
+ PART_0240                               
+ In poute_2D, itime =         2041
+ time, dt     4.8025451      2.48970883E-03   ok
+ PART_0241                               
+ In poute_2D, itime =         2050
+ time, dt     4.8246374      2.43061734E-03   ok
+ PART_0242                               
+ In poute_2D, itime =         2058
+ time, dt     4.8439469      2.40450539E-03   ok
+ PART_0243                               
+ In poute_2D, itime =         2066
+ time, dt     4.8631859      2.41205562E-03   ok
+ PART_0244                               
+ In poute_2D, itime =         2074
+ time, dt     4.8828502      2.49446114E-03   ok
+ PART_0245                               
+ In poute_2D, itime =         2082
+ time, dt     4.9028478      2.51078792E-03   ok
+ PART_0246                               
+ In poute_2D, itime =         2090
+ time, dt     4.9232192      2.55439989E-03   ok
+ PART_0247                               
+ In poute_2D, itime =         2098
+ time, dt     4.9434576      2.51972373E-03   ok
+ PART_0248                               
+ In poute_2D, itime =         2106
+ time, dt     4.9639091      2.57334043E-03   ok
+ PART_0249                               
+ In poute_2D, itime =         2114
+ time, dt     4.9843812      2.56214151E-03   ok
+ PART_0250                               
+ In poute_2D, itime =         2122
+ time, dt     5.0047746      2.54211552E-03   ok
+ PART_0251                               
+ In poute_2D, itime =         2129
+ time, dt     5.0226221      2.56602652E-03   ok
+ PART_0252                               
+ In poute_2D, itime =         2137
+ time, dt     5.0434318      2.62003299E-03   ok
+ PART_0253                               
+ In poute_2D, itime =         2145
+ time, dt     5.0640039      2.47140392E-03   ok
+ PART_0254                               
+ In poute_2D, itime =         2153
+ time, dt     5.0829792      2.32639443E-03   ok
+ PART_0255                               
+ In poute_2D, itime =         2162
+ time, dt     5.1040258      2.39161449E-03   ok
+ PART_0256                               
+ In poute_2D, itime =         2170
+ time, dt     5.1230521      2.37319269E-03   ok
+ PART_0257                               
+ In poute_2D, itime =         2179
+ time, dt     5.1444554      2.37579318E-03   ok
+ PART_0258                               
+ In poute_2D, itime =         2187
+ time, dt     5.1629658      2.27072369E-03   ok
+ PART_0259                               
+ In poute_2D, itime =         2196
+ time, dt     5.1836085      2.32021254E-03   ok
+ PART_0260                               
+ In poute_2D, itime =         2204
+ time, dt     5.2023721      2.36417516E-03   ok
+ PART_0261                               
+ In poute_2D, itime =         2213
+ time, dt     5.2237897      2.38670642E-03   ok
+ PART_0262                               
+ In poute_2D, itime =         2221
+ time, dt     5.2429557      2.43552378E-03   ok
+ PART_0263                               
+ In poute_2D, itime =         2230
+ time, dt     5.2648816      2.44647195E-03   ok
+ PART_0264                               
+ In poute_2D, itime =         2238
+ time, dt     5.2847176      2.50911363E-03   ok
+ PART_0265                               
+ In poute_2D, itime =         2246
+ time, dt     5.3049736      2.49581318E-03   ok
+ PART_0266                               
+ In poute_2D, itime =         2254
+ time, dt     5.3240337      2.32844101E-03   ok
+ PART_0267                               
+ In poute_2D, itime =         2262
+ time, dt     5.3423462      2.27562082E-03   ok
+ PART_0268                               
+ In poute_2D, itime =         2271
+ time, dt     5.3629174      2.30042613E-03   ok
+ PART_0269                               
+ In poute_2D, itime =         2280
+ time, dt     5.3838367      2.34508421E-03   ok
+ PART_0270                               
+ In poute_2D, itime =         2288
+ time, dt     5.4030824      2.42235442E-03   ok
+ PART_0271                               
+ In poute_2D, itime =         2296
+ time, dt     5.4227400      2.48467363E-03   ok
+ PART_0272                               
+ In poute_2D, itime =         2304
+ time, dt     5.4429722      2.56164791E-03   ok
+ PART_0273                               
+ In poute_2D, itime =         2312
+ time, dt     5.4635720      2.57951301E-03   ok
+ PART_0274                               
+ In poute_2D, itime =         2320
+ time, dt     5.4841013      2.56603910E-03   ok
+ PART_0275                               
+ In poute_2D, itime =         2328
+ time, dt     5.5047917      2.60334951E-03   ok
+ PART_0276                               
+ In poute_2D, itime =         2335
+ time, dt     5.5231886      2.63019023E-03   ok
+ PART_0277                               
+ In poute_2D, itime =         2343
+ time, dt     5.5441933      2.62926822E-03   ok
+ PART_0278                               
+ In poute_2D, itime =         2351
+ time, dt     5.5651278      2.60763709E-03   ok
+ PART_0279                               
+ In poute_2D, itime =         2358
+ time, dt     5.5833602      2.60419655E-03   ok
+ PART_0280                               
+ In poute_2D, itime =         2366
+ time, dt     5.6041727      2.59017665E-03   ok
+ PART_0281                               
+ In poute_2D, itime =         2374
+ time, dt     5.6248651      2.58750329E-03   ok
+ PART_0282                               
+ In poute_2D, itime =         2381
+ time, dt     5.6429939      2.59794854E-03   ok
+ PART_0283                               
+ In poute_2D, itime =         2389
+ time, dt     5.6638064      2.59321742E-03   ok
+ PART_0284                               
+ In poute_2D, itime =         2397
+ time, dt     5.6844993      2.58112419E-03   ok
+ PART_0285                               
+ In poute_2D, itime =         2405
+ time, dt     5.7050166      2.55041244E-03   ok
+ PART_0286                               
+ In poute_2D, itime =         2412
+ time, dt     5.7226658      2.49404460E-03   ok
+ PART_0287                               
+ In poute_2D, itime =         2421
+ time, dt     5.7448859      2.46186438E-03   ok
+ PART_0288                               
+ In poute_2D, itime =         2429
+ time, dt     5.7645144      2.44280230E-03   ok
+ PART_0289                               
+ In poute_2D, itime =         2437
+ time, dt     5.7840381      2.44029681E-03   ok
+ PART_0290                               
+ In poute_2D, itime =         2445
+ time, dt     5.8036232      2.44910456E-03   ok
+ PART_0291                               
+ In poute_2D, itime =         2453
+ time, dt     5.8232217      2.45382055E-03   ok
+ PART_0292                               
+ In poute_2D, itime =         2461
+ time, dt     5.8428278      2.45327293E-03   ok
+ PART_0293                               
+ In poute_2D, itime =         2470
+ time, dt     5.8648505      2.45444174E-03   ok
+ PART_0294                               
+ In poute_2D, itime =         2478
+ time, dt     5.8846903      2.49437918E-03   ok
+ PART_0295                               
+ In poute_2D, itime =         2486
+ time, dt     5.9046550      2.49205413E-03   ok
+ PART_0296                               
+ In poute_2D, itime =         2494
+ time, dt     5.9246931      2.52551050E-03   ok
+ PART_0297                               
+ In poute_2D, itime =         2502
+ time, dt     5.9449592      2.54359655E-03   ok
+ PART_0298                               
+ In poute_2D, itime =         2509
+ time, dt     5.9628553      2.56196246E-03   ok
+ PART_0299                               
+ In poute_2D, itime =         2517
+ time, dt     5.9832568      2.53527449E-03   ok
+ PART_0300                               
+ In poute_2D, itime =         2525
+ time, dt     6.0037813      2.57641613E-03   ok
+ PART_0301                               
+ In poute_2D, itime =         2533
+ time, dt     6.0241537      2.52993475E-03   ok
+ PART_0302                               
+ In poute_2D, itime =         2541
+ time, dt     6.0443144      2.51159654E-03   ok
+ PART_0303                               
+ In poute_2D, itime =         2549
+ time, dt     6.0642743      2.49459432E-03   ok
+ PART_0304                               
+ In poute_2D, itime =         2557
+ time, dt     6.0845165      2.53583235E-03   ok
+ PART_0305                               
+ In poute_2D, itime =         2565
+ time, dt     6.1046085      2.48884712E-03   ok
+ PART_0306                               
+ In poute_2D, itime =         2573
+ time, dt     6.1243172      2.45117350E-03   ok
+ PART_0307                               
+ In poute_2D, itime =         2581
+ time, dt     6.1440988      2.54318351E-03   ok
+ PART_0308                               
+ In poute_2D, itime =         2589
+ time, dt     6.1646390      2.58095586E-03   ok
+ PART_0309                               
+ In poute_2D, itime =         2596
+ time, dt     6.1827159      2.57250178E-03   ok
+ PART_0310                               
+ In poute_2D, itime =         2604
+ time, dt     6.2030058      2.52016401E-03   ok
+ PART_0311                               
+ In poute_2D, itime =         2612
+ time, dt     6.2228537      2.46882183E-03   ok
+ PART_0312                               
+ In poute_2D, itime =         2621
+ time, dt     6.2447338      2.41589313E-03   ok
+ PART_0313                               
+ In poute_2D, itime =         2629
+ time, dt     6.2640305      2.40968144E-03   ok
+ PART_0314                               
+ In poute_2D, itime =         2637
+ time, dt     6.2832332      2.39457749E-03   ok
+ PART_0315                               
+ In poute_2D, itime =         2645
+ time, dt     6.3026977      2.46669981E-03   ok
+ PART_0316                               
+ In poute_2D, itime =         2653
+ time, dt     6.3228583      2.56163091E-03   ok
+ PART_0317                               
+ In poute_2D, itime =         2661
+ time, dt     6.3434224      2.56683328E-03   ok
+ PART_0318                               
+ In poute_2D, itime =         2669
+ time, dt     6.3636475      2.44002440E-03   ok
+ PART_0319                               
+ In poute_2D, itime =         2677
+ time, dt     6.3829603      2.39972514E-03   ok
+ PART_0320                               
+ In poute_2D, itime =         2686
+ time, dt     6.4047208      2.44352291E-03   ok
+ PART_0321                               
+ In poute_2D, itime =         2694
+ time, dt     6.4244528      2.45949486E-03   ok
+ PART_0322                               
+ In poute_2D, itime =         2702
+ time, dt     6.4441533      2.49796826E-03   ok
+ PART_0323                               
+ In poute_2D, itime =         2710
+ time, dt     6.4641690      2.50684936E-03   ok
+ PART_0324                               
+ In poute_2D, itime =         2718
+ time, dt     6.4842987      2.52275448E-03   ok
+ PART_0325                               
+ In poute_2D, itime =         2726
+ time, dt     6.5045218      2.52873637E-03   ok
+ PART_0326                               
+ In poute_2D, itime =         2734
+ time, dt     6.5249200      2.57409061E-03   ok
+ PART_0327                               
+ In poute_2D, itime =         2741
+ time, dt     6.5429530      2.58148764E-03   ok
+ PART_0328                               
+ In poute_2D, itime =         2749
+ time, dt     6.5636897      2.59609427E-03   ok
+ PART_0329                               
+ In poute_2D, itime =         2757
+ time, dt     6.5843287      2.56012380E-03   ok
+ PART_0330                               
+ In poute_2D, itime =         2765
+ time, dt     6.6050334      2.60504032E-03   ok
+ PART_0331                               
+ In poute_2D, itime =         2772
+ time, dt     6.6232815      2.61367927E-03   ok
+ PART_0332                               
+ In poute_2D, itime =         2780
+ time, dt     6.6442704      2.62424839E-03   ok
+ PART_0333                               
+ In poute_2D, itime =         2788
+ time, dt     6.6651115      2.58798292E-03   ok
+ PART_0334                               
+ In poute_2D, itime =         2795
+ time, dt     6.6834836      2.64787092E-03   ok
+ PART_0335                               
+ In poute_2D, itime =         2803
+ time, dt     6.7047386      2.66666338E-03   ok
+ PART_0336                               
+ In poute_2D, itime =         2810
+ time, dt     6.7233233      2.62116990E-03   ok
+ PART_0337                               
+ In poute_2D, itime =         2818
+ time, dt     6.7436943      2.49791448E-03   ok
+ PART_0338                               
+ In poute_2D, itime =         2826
+ time, dt     6.7637911      2.51752906E-03   ok
+ PART_0339                               
+ In poute_2D, itime =         2834
+ time, dt     6.7838612      2.50654947E-03   ok
+ PART_0340                               
+ In poute_2D, itime =         2842
+ time, dt     6.8037434      2.45675445E-03   ok
+ PART_0341                               
+ In poute_2D, itime =         2850
+ time, dt     6.8231645      2.41447240E-03   ok
+ PART_0342                               
+ In poute_2D, itime =         2858
+ time, dt     6.8433962      2.54988181E-03   ok
+ PART_0343                               
+ In poute_2D, itime =         2866
+ time, dt     6.8638620      2.55361036E-03   ok
+ PART_0344                               
+ In poute_2D, itime =         2874
+ time, dt     6.8840599      2.50219181E-03   ok
+ PART_0345                               
+ In poute_2D, itime =         2882
+ time, dt     6.9042854      2.62284325E-03   ok
+ PART_0346                               
+ In poute_2D, itime =         2889
+ time, dt     6.9228258      2.67072744E-03   ok
+ PART_0347                               
+ In poute_2D, itime =         2897
+ time, dt     6.9442854      2.67537683E-03   ok
+ PART_0348                               
+ In poute_2D, itime =         2904
+ time, dt     6.9627976      2.62291613E-03   ok
+ PART_0349                               
+ In poute_2D, itime =         2912
+ time, dt     6.9838195      2.68985610E-03   ok
+ In poute_2D, itime =         2919
+ time, dt     7.0025964      2.67520244E-03   ok
+ End 
+ time_begin  4.00000019E-03 seconds
+ time_end   12.572785     seconds
+ Time of operation was   12.568786     seconds

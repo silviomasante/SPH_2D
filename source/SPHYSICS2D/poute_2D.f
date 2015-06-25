@@ -29,7 +29,7 @@ c     --- Write out to PART-type files ---
 
       do i=1,np
          write(nf,100) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
-     + mpf(i),porosita(i),Pcap(i)
+     + fmp(i),porosita(i),Pcap(i)
 
       enddo
 

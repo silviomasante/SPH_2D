@@ -255,7 +255,7 @@ c     --- Load Particle Position Data ---
 
        do i=1,np
          read(13,196) xp(i),zp(i),up(i),wp(i),rhop(i),p(i),pm(i),
-     +   mpf(i),porosita(i)
+     +   fmp(i),porosita(i)
                                                                 
          call equation_of_state(rhop(i),TEp(i),p(i),cs(i))
 
@@ -284,7 +284,7 @@ c     --- Load Particle Position Data ---
 
          pVol(i)       = pm(i)/rhop(i)
          coeffsat(i)   = 1/(rho0*porosita(i)*pVol(i))
-         saturazione(i)= mpf(i)*coeffsat(i)
+         saturazione(i)= fmp(i)*coeffsat(i)
 
 
          
