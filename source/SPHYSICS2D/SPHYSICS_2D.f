@@ -129,10 +129,10 @@ c
        
 c      my parameters for the absorption       
        viscosita=1.d-3
-       ccap=1.d3
+       ccap=1.d4
        alpha=1.d-1
        do i=nstart,np
-       permeabilita(i)=1.d-12
+       permeabilita(i)=1.d-11
        coeffvel(i)=permeabilita(i)/(porosita(i)*viscosita)
        coeffsat(i)=1.d0/(rho0*porosita(i)*pVol(i))
        if (i.le.nb) then

@@ -184,10 +184,10 @@ c       absorbed fluid velocity
          versz=drz/sqrt(rr2)
          
          
-       diff(i)=((-VfX(j)*versx-VfZ(j)*versz)*(saturazione(j))**7)/rr2
+       diff(i)=((-VfX(j)*versx-VfZ(j)*versz)*(saturazione(j))**7)!/rr2
 c     + sqrt(rr2)
 
-       diff(j)=((-VfX(i)*versx-VfZ(i)*versz)*(saturazione(i))**7)/rr2
+       diff(j)=((-VfX(i)*versx-VfZ(i)*versz)*(saturazione(i))**7)!/rr2
 c     + sqrt(rr2)  
          
          dmpItest=pm(i)+(dmpdt(i)+diff(i)*pVol(j)*(fmp(i)-fmp(j)))*dt2

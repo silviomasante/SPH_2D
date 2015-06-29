@@ -52,11 +52,11 @@
   4: Incompressible Fluid (Poissons equation)
  i_EoS           1
   Maximum Depth in the simulation, h_SWL
-   2.0000000    
+   8.0000000    
   Coefficient of Speed of sound ( 10 , 40 ) ??
    10.000000    
-  B=coef2*rho0*g*(h_SWL)/7.0 =   280285.72    
-  Co=   10.000000     *V=   44.294472    
+  B=coef2*rho0*g*(h_SWL)/7.0 =   1121142.9    
+  Co=   10.000000     *V=   88.588943    
  Choose Boundary Type
  Monaghan & Kos (1999) = 1
  Dalrymple & Knio (2001) = 2
@@ -76,12 +76,12 @@
  --- Generating 2-D Box ---
 
   Box dimension LX,LZ?
-   8.0000000       4.0000000    
+   8.0000000       8.0000000    
   Spacing dx,dz?
-  0.50000000000000000       0.50000000000000000     
+  5.00000000000000028E-002  5.00000000000000028E-002
   Inclination of floor in X ( beta ) ?? 
    0.0000000    
-  Dimension (pixels)          16           0           8
+  Dimension (pixels)         160           0         160
 
   Enter Periodicity Information:
   Add Periodic Lateral boundaries
@@ -92,8 +92,8 @@
  Y-Direction:            0
  Z-Direction:            0
  Left  wall (x = x1) starts at            1
- Right wall (x = x2) starts at           19
- Bottom boundary starts at                   37
+ Right wall (x = x2) starts at          323
+ Bottom boundary starts at                  645
   Add wall inside the box (1=y)
            0
   Add obstacle inside the box (1=y)
@@ -108,17 +108,17 @@
            1
   Cube containing particles
   XMin, Xmax ??
-   4.0000000000000000        5.0000000000000000     
+   4.0000000000000000        7.9500000000000002     
   ZMin, Zmax ??
-  0.50000000000000000        2.0000000000000000     
+  5.00000000000000028E-002   2.0000000000000000     
   slope in X direction??
    90.000000    
- Npnts x/y/z           3           1           4
- Beginning of obstacle at           68
- End of obstacle at           91
+ Npnts x/y/z          80           1          40
+ Beginning of obstacle at          964
+ End of obstacle at         7363
   Add another obstacle inside the beach (1=y)
            0
- No of B. Fixed Particles          91
+ No of B. Fixed Particles        7363
   Add wavemaker inside the box (1=y)
            0
   Add gate inside the box (1=y)
@@ -126,8 +126,8 @@
 
   Add Floating Bodies (1=yes) ?
            0
- nbfm           91
- No of B. Particles          91
+ nbfm         7363
+ No of B. Particles        7363
  Initial conditions
  1) Set of particles without grid
  2) Fill a square shaped region 
@@ -138,32 +138,32 @@
            0
   Cube containing particles
   XMin, Xmax ??
-  0.50000000000000000        2.5000000000000000     
+  5.00000000000000028E-002   3.5000000000000000     
   ZMin, Zmax ??
-  0.50000000000000000        1.5000000000000000     
+  5.00000000000000028E-002   7.5000000000000000     
 
- XXmin_initial   0.50000000000000000     
- XXmax_initial    2.5000000    
- ZZmin_initial   0.50000000    
- ZZmax_initial    1.5000000    
+ XXmin_initial   5.00000000000000028E-002
+ XXmax_initial    3.5000000    
+ ZZmin_initial   5.00000007E-02
+ ZZmax_initial    7.5000000    
 
- Recalculated max and min X    2.5000000000000000       0.50000000000000000     
+ Recalculated max and min X    3.5000000000000000       5.00000000000000028E-002
  Recalculated max and min Y    0.0000000       0.0000000    
- Recalculated max and min Z    1.5000000000000000       0.50000000000000000     
+ Recalculated max and min Z    7.5000000000000000       5.00000000000000028E-002
 
  i_obstacleShape            1
  iopt_wavemaker             0
  i_paddleType               0
  beta   0.0000000    
 
-  Npnts x/y/z            5           1           3
- Last Particle         118
+  Npnts x/y/z           70           1         150
+ Last Particle       28213
   Fill a new region ?? (1=y)
            0
- No of Particles         118
+ No of Particles       28213
  End
   please input the tmax and out:
-   7.0000000      1.99999996E-02
+   10.000000      0.10000000    
   initial recording time
    0.0000000    
   For detailed recording during RUN
@@ -179,14 +179,14 @@
 
  --- Courant Stability Check ---
  Courant No. Cr =   0.20000000    
- B    =              280285.72    
- Cmax =              44.294468    
- dtmax:   2.05238024E-03
+ B    =              1121142.9    
+ Cmax =              88.588936    
+ dtmax:   1.02619008E-04
 
  --- Viscous Stability Check ---
  Kinematic Viscosity  9.99999997E-07
  Visc =             9.99999997E-07
- dtmax:    495.04953    
+ dtmax:    4.9504952    
 
  dt:   9.99999975E-05
 
@@ -197,10 +197,10 @@
  iRiemannSolver            0
 
  -- Checking particles initial Positions --
- dx, dz   0.50000000000000000       0.50000000000000000     
- dx_thresh   5.00000007E-02
- dz_thresh   5.00000007E-02
- ncx, ncz            9           6
+ dx, dz   5.00000000000000028E-002  5.00000000000000028E-002
+ dx_thresh   4.99999989E-03
+ dz_thresh   4.99999989E-03
+ ncx, ncz           64          64
  --> Particle Positions Okay
 
 
@@ -220,8 +220,8 @@
  Single Precision kind number is            4
  Opening source\SPHYSICS2D\precision_kind.2D, 
 
- nbf            91
- nbfm           91
- nb             91
- np            118
-Generated np =        118 particles in   0.00 seconds
+ nbf          7363
+ nbfm         7363
+ nb           7363
+ np          28213
+Generated np =      28213 particles in   0.02 seconds
