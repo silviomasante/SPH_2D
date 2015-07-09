@@ -203,6 +203,7 @@ c         write(*,*)dmpdt(i),fmpdot(i)
          coeffsat(i)=1.d0/(rho0*porosita(i)*pVol(i))
          if (i.le.nb) then
          saturazione(i)= fmp(i)*coeffsat(i)
+         if (saturazione(i).gt.1.0) write(*,*) saturazione(i)
          else
          saturazione(i)= 1.d0
          endif

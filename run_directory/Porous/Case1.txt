@@ -35,7 +35,7 @@
 0.05,3.5     		Cube containing particles :  XMin, Xmax ??
 0.05,7.5    	        Cube containing particles :  ZMin, Zmax ??
 0     			Fill a new region
-10.0,0.1      	        Input the tmax and out
+8,0.01      	        Input the tmax and out
 0.   			initial time of outputting general data
 0.0005,1.0,-1.0    	For detailed recording during RUN: out_detail, start, end
 0.0001,1     		Input dt?? , i_var_dt ??
